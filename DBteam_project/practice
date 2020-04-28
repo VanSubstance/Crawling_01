@@ -8,7 +8,7 @@ options = webdriver.ChromeOptions()
 options.add_argument("disable-gpu") # 가속 사용 x
 options.add_argument("lang=ko_KR") # 한국어
 options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/81.0.4044.113")
-driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome('E:\Studying\DB\Crawling_01')
 driver.implicitly_wait(3)   #3초대기
 
 results = []
