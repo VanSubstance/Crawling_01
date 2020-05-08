@@ -9,13 +9,15 @@ case = []
 T = open("Sample1.sql", "w")
 
 "테이블 생성 코드 입력"
-T.write("create table SampleTable (\"No\" integer, \"Name\" varchar(20), \"Review\" varchar(20), \"Category\" varchar(20), \"Link\" varchar(200));\n")
+T.write("SET DEFINE OFF;\n")
+T.write("drop table SampleTable;\n")
+T.write("create table SampleTable (\"NUM\" integer, \"ST_NAME\" varchar(60), \"REV_NUM\" varchar(60), \"CTGR\" varchar(60), \"URL\" varchar(400));\n")
 
 "data의 행 수만큼 반복"
 "case에 sql 언어로 작성해서 sql 파일에 기제"
 for i in range(data.shape[0]):
     line = data.iloc[i]
-    case.append("insert into SampleTable (No, Name, Review, Category, Link) values (")
+    case.append("insert into SampleTable (NUM, ST_NAME, REV_NUM, CTGR, URL) values (")
     case.append(str(line[0]))
     case.append(", \'%s\'" % line[1])
     case.append(", \'%s\'" % line[2])
