@@ -1,12 +1,12 @@
 import pandas as pd
 
-data = pd.read_csv('E:/Studying/DB/Crawling_01/DBteam_project/Station/Stations.csv', encoding='cp949')
+data = pd.read_csv('E:/Studying/DB/Crawling_01/DBteam_project/Station/Stations.csv', encoding='UTF-8')
 
 "SQL에 업로드할 정보가 담긴 존나 큰 튜플덩어리"
 case = []
 
 "sql 파일 만들기"
-T = open("E:/Studying/DB/Crawling_01/DBteam_project/Station/Stations.sql", "w")
+T = open("E:/Studying/DB/Crawling_01/DBteam_project/Station/Stations.sql", "w+t")
 
 T.write("SET DEFINE OFF;\n")
 

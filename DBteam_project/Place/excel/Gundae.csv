@@ -1,22 +1,137 @@
-Place,name,review,category,URL
-Gundae,���ٺ�ġ������ �ɵ�,999+,���ð�,null
-Gundae,�����̴����������,568,������,null
-Gundae,�Ǵ���ǰŸ�,72,���ڰŸ�,null
-Gundae,�����̴�������ǹ�,70,�μӰǹ�,null
-Gundae,�Ǵ�粿ġ���,51,�����ڽ�,null
-Gundae,�Ǵ�ε����Ÿ�,42,�����ڽ�,null
-Gundae,�����̴������������,37,�μӰǹ�,null
-Gundae,�����̴��������������,33,�μӰǹ�,null
-Gundae,�Ҽ��Ѱ������ΰ��Ϻ���,29,�μӽü�,null
-Gundae,�ɵ��κм�����,29,�ٸ�����,null
-Gundae,�����̴������Ʋ��Ʋ������,24,�μӰǹ�,null
-Gundae,��������,17,�ٸ�����,null
-Gundae,������ܾ��ȸ�����а�,15,���ð�,null
-Gundae,�����̴�����������ٴٵ�����,12,�μӽü�,null
-Gundae,�Ǳ����б� �ڹ���,12,�ڹ���,null
-Gundae,��Ƽ��������,11,�ٸ�����,null
-Gundae,�����̴����������ȭ����,10,�μӰǹ�,null
-Gundae,SKT 5GX �����,9,"����,ü��",null
-Gundae,�����̴�����������ʽĵ�������,9,�μӽü�,null
-Gundae,ȭ�����,8,�ٸ�����,null
-Gundae,�Ǳ����б� ����ǰŸ�,1,"�Ÿ�,���",null
+﻿Station,0,1,3,2
+Gundae,빈티지코인노래연습장 구의점,28,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1125199206&query=%EB%B9%88%ED%8B%B0%EC%A7%80%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5%20%EA%B5%AC%EC%9D%98%EC%A0%90
+Gundae,엔젤코인노래방,22,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=324862963&query=%EC%97%94%EC%A0%A4%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,악쓰는하마 노래연습장 건대점,22,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=35084755&query=%EC%95%85%EC%93%B0%EB%8A%94%ED%95%98%EB%A7%88%20%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,플레이원,21,오락실,https://store.naver.com/restaurants/detail?entry=ple&id=88383729&query=%ED%94%8C%EB%A0%88%EC%9D%B4%EC%9B%90
+Gundae,락휴 코인노래연습장 건대중문점,13,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=509339743&query=%EB%9D%BD%ED%9C%B4%20%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5%20%EA%B1%B4%EB%8C%80%EC%A4%91%EB%AC%B8%EC%A0%90
+Gundae,락휴 코인노래연습장 세종대점,12,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37349589&query=%EB%9D%BD%ED%9C%B4%20%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5%20%EC%84%B8%EC%A2%85%EB%8C%80%EC%A0%90
+Gundae,락휴 코인노래연습장 서울 건대입구역점,11,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1330380654&query=%EB%9D%BD%ED%9C%B4%20%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5%20%EC%84%9C%EC%9A%B8%20%EA%B1%B4%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD%EC%A0%90
+Gundae,하비코인노래방,9,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=808150209&query=%ED%95%98%EB%B9%84%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,락휴 코인노래연습장 건대점,8,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37837792&query=%EB%9D%BD%ED%9C%B4%20%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,락 노래타운,6,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37911240&query=%EB%9D%BD%20%EB%85%B8%EB%9E%98%ED%83%80%EC%9A%B4
+Gundae,포그니노래방,5,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=20878573&query=%ED%8F%AC%EA%B7%B8%EB%8B%88%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,뮤노래방,5,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=21647285&query=%EB%AE%A4%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,리코스타코인노래방,5,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=110869375&query=%EB%A6%AC%EC%BD%94%EC%8A%A4%ED%83%80%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,크레이지더코인노래연습장,4,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=617283304&query=%ED%81%AC%EB%A0%88%EC%9D%B4%EC%A7%80%EB%8D%94%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,웰빙노래방,4,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=18003553&query=%EC%9B%B0%EB%B9%99%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,BJ stage 코인노래방,4,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=919056707&query=BJ%20stage%20%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,24시코인노래방,3,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37481758&query=24%EC%8B%9C%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,악하마건대2호점노래방,3,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37481497&query=%EC%95%85%ED%95%98%EB%A7%88%EA%B1%B4%EB%8C%802%ED%98%B8%EC%A0%90%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,비엠노래방,3,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=20893918&query=%EB%B9%84%EC%97%A0%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,샹떼코인노래연습장,3,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=38676256&query=%EC%83%B9%EB%96%BC%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,동전노래오락실노래방,3,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37483131&query=%EB%8F%99%EC%A0%84%EB%85%B8%EB%9E%98%EC%98%A4%EB%9D%BD%EC%8B%A4%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,희스토리 건대점,3,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=13011472&query=%ED%9D%AC%EC%8A%A4%ED%86%A0%EB%A6%AC%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,리코스타,2,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1211382229&query=%EB%A6%AC%EC%BD%94%EC%8A%A4%ED%83%80
+Gundae,건대게임천국노래방,2,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37483165&query=%EA%B1%B4%EB%8C%80%EA%B2%8C%EC%9E%84%EC%B2%9C%EA%B5%AD%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,인싸노인코래방,2,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1419904580&query=%EC%9D%B8%EC%8B%B8%EB%85%B8%EC%9D%B8%EC%BD%94%EB%9E%98%EB%B0%A9
+Gundae,룸스토리노래연습장,2,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1289508615&query=%EB%A3%B8%EC%8A%A4%ED%86%A0%EB%A6%AC%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,도깨비코인노래연습장,2,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1116079683&query=%EB%8F%84%EA%B9%A8%EB%B9%84%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,대박코인노래연습장,2,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37482375&query=%EB%8C%80%EB%B0%95%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,원투쓰리,2,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=13159244&query=%EC%9B%90%ED%88%AC%EC%93%B0%EB%A6%AC
+Gundae,테크노노래방,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=20924382&query=%ED%85%8C%ED%81%AC%EB%85%B8%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,ok노래방,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37391942&query=ok%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,쿼터백노래연습장,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37482788&query=%EC%BF%BC%ED%84%B0%EB%B0%B1%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,연예인노래방,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=20943342&query=%EC%97%B0%EC%98%88%EC%9D%B8%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,춤추는돌고래노래연습장,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1036124838&query=%EC%B6%A4%EC%B6%94%EB%8A%94%EB%8F%8C%EA%B3%A0%EB%9E%98%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,Kpop 뮤직타운,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37482114&query=Kpop%20%EB%AE%A4%EC%A7%81%ED%83%80%EC%9A%B4
+Gundae,코인몬스터 노래연습장 건대점,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1753223848&query=%EC%BD%94%EC%9D%B8%EB%AA%AC%EC%8A%A4%ED%84%B0%20%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,리코스타코인노래연습장,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1745665527&query=%EB%A6%AC%EC%BD%94%EC%8A%A4%ED%83%80%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,지인노래방,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1255922325&query=%EC%A7%80%EC%9D%B8%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,핑클노래방,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=31664299&query=%ED%95%91%ED%81%B4%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,악쓰는하마코인노래방,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1602467995&query=%EC%95%85%EC%93%B0%EB%8A%94%ED%95%98%EB%A7%88%EC%BD%94%EC%9D%B8%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,두리,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=13155426&query=%EB%91%90%EB%A6%AC
+Gundae,펌프노래장,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1905493986&query=%ED%8E%8C%ED%94%84%EB%85%B8%EB%9E%98%EC%9E%A5
+Gundae,플로렌스,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=13155066&query=%ED%94%8C%EB%A1%9C%EB%A0%8C%EC%8A%A4
+Gundae,오디션노래방,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=34573063&query=%EC%98%A4%EB%94%94%EC%85%98%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,놀자노래연습장,1,노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37482363&query=%EB%86%80%EC%9E%90%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,최고노래방,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=18003334&query=%EC%B5%9C%EA%B3%A0%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,둥지노래연습장,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1759307474&query=%EB%91%A5%EC%A7%80%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,샴푸노래연습장,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=524043409&query=%EC%83%B4%ED%91%B8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,핑클,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=17991850&query=%ED%95%91%ED%81%B4
+Gundae,히트노래방노유점,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=20851719&query=%ED%9E%88%ED%8A%B8%EB%85%B8%EB%9E%98%EB%B0%A9%EB%85%B8%EC%9C%A0%EC%A0%90
+Gundae,톡톡노래방,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=37475996&query=%ED%86%A1%ED%86%A1%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,짱노래방,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=18824877&query=%EC%A7%B1%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,25시노래연습장,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=18019599&query=25%EC%8B%9C%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,예림노래방,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=1972198828&query=%EC%98%88%EB%A6%BC%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,테크노노래연습장,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=20771544&query=%ED%85%8C%ED%81%AC%EB%85%B8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,뱅뱅노래방,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=589344094&query=%EB%B1%85%EB%B1%85%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,앵콜노래방,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=13155510&query=%EC%95%B5%EC%BD%9C%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,지지배배노래방,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=388269186&query=%EC%A7%80%EC%A7%80%EB%B0%B0%EB%B0%B0%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,브이제이노래방,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=20893734&query=%EB%B8%8C%EC%9D%B4%EC%A0%9C%EC%9D%B4%EB%85%B8%EB%9E%98%EB%B0%A9
+Gundae,챔피온노래연습장,[],노래방,https://store.naver.com/restaurants/detail?entry=ple&id=31676248&query=%EC%B1%94%ED%94%BC%EC%98%A8%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5%EC%9E%A5
+Gundae,포포PC방 건대점,11,PC방,https://store.naver.com/restaurants/detail?entry=ple&id=339128853&query=%ED%8F%AC%ED%8F%ACPC%EB%B0%A9%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,아이닉스PC방 건대점,9,PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1041883797&query=%EC%95%84%EC%9D%B4%EB%8B%89%EC%8A%A4PC%EB%B0%A9%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,B1 PC,2,PC방,https://store.naver.com/restaurants/detail?entry=ple&id=756332113&query=B1%20PC
+Gundae,이스포츠센터 건대점,2,PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1237412223&query=%EC%9D%B4%EC%8A%A4%ED%8F%AC%EC%B8%A0%EC%84%BC%ED%84%B0%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,비원PC방,2,PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1215387655&query=%EB%B9%84%EC%9B%90PC%EB%B0%A9
+Gundae,에코스PC방 구의점,2,PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1361549204&query=%EC%97%90%EC%BD%94%EC%8A%A4PC%EB%B0%A9%20%EA%B5%AC%EC%9D%98%EC%A0%90
+Gundae,Gate 5 pc,2,PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1665124705&query=Gate%205%20pc
+Gundae,아이센스PC 건대점,1,PC방,https://store.naver.com/restaurants/detail?entry=ple&id=38455047&query=%EC%95%84%EC%9D%B4%EC%84%BC%EC%8A%A4PC%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,맵스PC,1,PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1028816049&query=%EB%A7%B5%EC%8A%A4PC
+Gundae,아이콘PC방,1,PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1172960387&query=%EC%95%84%EC%9D%B4%EC%BD%98PC%EB%B0%A9
+Gundae,지프로pc방,1,PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1228801232&query=%EC%A7%80%ED%94%84%EB%A1%9Cpc%EB%B0%A9
+Gundae,쿨라인피시방,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=11653111&query=%EC%BF%A8%EB%9D%BC%EC%9D%B8%ED%94%BC%EC%8B%9C%EB%B0%A9
+Gundae,아이넷폴리스존,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=37943691&query=%EC%95%84%EC%9D%B4%EB%84%B7%ED%8F%B4%EB%A6%AC%EC%8A%A4%EC%A1%B4
+Gundae,쿨아이닉스PC방,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=13552364&query=%EC%BF%A8%EC%95%84%EC%9D%B4%EB%8B%89%EC%8A%A4PC%EB%B0%A9
+Gundae,아바타PC,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=20843770&query=%EC%95%84%EB%B0%94%ED%83%80PC
+Gundae,7데이즈pc방,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=38332462&query=7%EB%8D%B0%EC%9D%B4%EC%A6%88pc%EB%B0%A9
+Gundae,날밤까기 길동2동점,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=11644784&query=%EB%82%A0%EB%B0%A4%EA%B9%8C%EA%B8%B0%20%EA%B8%B8%EB%8F%992%EB%8F%99%EC%A0%90
+Gundae,제노PCZONE 건대후문점,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1406001598&query=%EC%A0%9C%EB%85%B8PCZONE%20%EA%B1%B4%EB%8C%80%ED%9B%84%EB%AC%B8%EC%A0%90
+Gundae,제닉스아레나 자양동점,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1494227031&query=%EC%A0%9C%EB%8B%89%EC%8A%A4%EC%95%84%EB%A0%88%EB%82%98%20%EC%9E%90%EC%96%91%EB%8F%99%EC%A0%90
+Gundae,시즌아이PC방 자양동점,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=35597646&query=%EC%8B%9C%EC%A6%8C%EC%95%84%EC%9D%B4PC%EB%B0%A9%20%EC%9E%90%EC%96%91%EB%8F%99%EC%A0%90
+Gundae,엔탑피시방,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=38455070&query=%EC%97%94%ED%83%91%ED%94%BC%EC%8B%9C%EB%B0%A9
+Gundae,웹팰리스,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=37846076&query=%EC%9B%B9%ED%8C%B0%EB%A6%AC%EC%8A%A4
+Gundae,B one pc방,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1647131967&query=B%20one%20pc%EB%B0%A9
+Gundae,뉴욕PC존자양동점,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=20886331&query=%EB%89%B4%EC%9A%95PC%EC%A1%B4%EC%9E%90%EC%96%91%EB%8F%99%EC%A0%90
+Gundae,피씨앤쿡 건대점,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1094916978&query=%ED%94%BC%EC%94%A8%EC%95%A4%EC%BF%A1%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,하늘pc방,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=651780931&query=%ED%95%98%EB%8A%98pc%EB%B0%A9
+Gundae,비원 건대2호점,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1289366662&query=%EB%B9%84%EC%9B%90%20%EA%B1%B4%EB%8C%802%ED%98%B8%EC%A0%90
+Gundae,넥스트pc방,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=1325419547&query=%EB%84%A5%EC%8A%A4%ED%8A%B8pc%EB%B0%A9
+Gundae,클릭하세요PC,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=20847900&query=%ED%81%B4%EB%A6%AD%ED%95%98%EC%84%B8%EC%9A%94PC
+Gundae,매니아PC방,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=38455058&query=%EB%A7%A4%EB%8B%88%EC%95%84PC%EB%B0%A9
+Gundae,뉴헌터PC,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=20878729&query=%EB%89%B4%ED%97%8C%ED%84%B0PC
+Gundae,블랙케이브,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=11662164&query=%EB%B8%94%EB%9E%99%EC%BC%80%EC%9D%B4%EB%B8%8C
+Gundae,나인PC,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=978475704&query=%EB%82%98%EC%9D%B8PC
+Gundae,PC방몰,[],경영컨설팅,https://store.naver.com/restaurants/detail?entry=ple&id=11885265&query=PC%EB%B0%A9%EB%AA%B0
+Gundae,사이버파크 건대점,[],PC방,https://store.naver.com/restaurants/detail?entry=ple&id=12804091&query=%EC%82%AC%EC%9D%B4%EB%B2%84%ED%8C%8C%ED%81%AC%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,엔탑피시방,[],"창업,취업",https://store.naver.com/restaurants/detail?entry=ple&id=34333214&query=%EC%97%94%ED%83%91%ED%94%BC%EC%8B%9C%EB%B0%A9
+Gundae,키랩보드게임카페 건대본점,"1,784",보드카페,https://store.naver.com/restaurants/detail?entry=ple&id=37630236&query=%ED%82%A4%EB%9E%A9%EB%B3%B4%EB%93%9C%EA%B2%8C%EC%9E%84%EC%B9%B4%ED%8E%98%20%EA%B1%B4%EB%8C%80%EB%B3%B8%EC%A0%90
+Gundae,넥스트에디션 건대1호점,"1,253",방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=1964749945&query=%EB%84%A5%EC%8A%A4%ED%8A%B8%EC%97%90%EB%94%94%EC%85%98%20%EA%B1%B4%EB%8C%801%ED%98%B8%EC%A0%90
+Gundae,토담쓰담 스튜디오,887,"사진,스튜디오",https://store.naver.com/restaurants/detail?entry=ple&id=1335023115&query=%ED%86%A0%EB%8B%B4%EC%93%B0%EB%8B%B4%20%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4
+Gundae,방탈출카페 넥스트에디션 건대2호점,841,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=1163403341&query=%EB%B0%A9%ED%83%88%EC%B6%9C%EC%B9%B4%ED%8E%98%20%EB%84%A5%EC%8A%A4%ED%8A%B8%EC%97%90%EB%94%94%EC%85%98%20%EA%B1%B4%EB%8C%802%ED%98%B8%EC%A0%90
+Gundae,the box,837,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=37910504&query=the%20box
+Gundae,다빈치보드게임카페,664,보드카페,https://store.naver.com/restaurants/detail?entry=ple&id=1021803090&query=%EB%8B%A4%EB%B9%88%EC%B9%98%EB%B3%B4%EB%93%9C%EA%B2%8C%EC%9E%84%EC%B9%B4%ED%8E%98
+Gundae,엑스케이프 건대점,577,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=37609428&query=%EC%97%91%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,비트포비아 건대,524,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=37417739&query=%EB%B9%84%ED%8A%B8%ED%8F%AC%EB%B9%84%EC%95%84%20%EA%B1%B4%EB%8C%80
+Gundae,보드스토리 보드게임카페 건대점,477,보드카페,https://store.naver.com/restaurants/detail?entry=ple&id=36476378&query=%EB%B3%B4%EB%93%9C%EC%8A%A4%ED%86%A0%EB%A6%AC%20%EB%B3%B4%EB%93%9C%EA%B2%8C%EC%9E%84%EC%B9%B4%ED%8E%98%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,더메이즈,378,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=38411640&query=%EB%8D%94%EB%A9%94%EC%9D%B4%EC%A6%88
+Gundae,솔버 건대1호점,300,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=275096278&query=%EC%86%94%EB%B2%84%20%EA%B1%B4%EB%8C%801%ED%98%B8%EC%A0%90
+Gundae,메이즈이스케이프,275,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=37558813&query=%EB%A9%94%EC%9D%B4%EC%A6%88%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84
+Gundae,키랩보드게임카페 파티룸점,275,보드카페,https://store.naver.com/restaurants/detail?entry=ple&id=1515754473&query=%ED%82%A4%EB%9E%A9%EB%B3%B4%EB%93%9C%EA%B2%8C%EC%9E%84%EC%B9%B4%ED%8E%98%20%ED%8C%8C%ED%8B%B0%EB%A3%B8%EC%A0%90
+Gundae,케이이스케이프,259,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=37838000&query=%EC%BC%80%EC%9D%B4%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84
+Gundae,이스케이프플랜,234,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=37411807&query=%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84%ED%94%8C%EB%9E%9C
+Gundae,머더파커 건대점,208,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=1943808848&query=%EB%A8%B8%EB%8D%94%ED%8C%8C%EC%BB%A4%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,크라임씬카페 엑스크라임,201,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=1591363823&query=%ED%81%AC%EB%9D%BC%EC%9E%84%EC%94%AC%EC%B9%B4%ED%8E%98%20%EC%97%91%EC%8A%A4%ED%81%AC%EB%9D%BC%EC%9E%84
+Gundae,솔버 2호점,179,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=1115351738&query=%EC%86%94%EB%B2%84%202%ED%98%B8%EC%A0%90
+Gundae,비밀의화원 건대점,153,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=1564134200&query=%EB%B9%84%EB%B0%80%EC%9D%98%ED%99%94%EC%9B%90%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,플레이독스,147,보드카페,https://store.naver.com/restaurants/detail?entry=ple&id=31514856&query=%ED%94%8C%EB%A0%88%EC%9D%B4%EB%8F%85%EC%8A%A4
+Gundae,나인원 보드게임카페,147,보드카페,https://store.naver.com/restaurants/detail?entry=ple&id=1399494052&query=%EB%82%98%EC%9D%B8%EC%9B%90%20%EB%B3%B4%EB%93%9C%EA%B2%8C%EC%9E%84%EC%B9%B4%ED%8E%98
+Gundae,코드네임블랙,117,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=1444735136&query=%EC%BD%94%EB%93%9C%EB%84%A4%EC%9E%84%EB%B8%94%EB%9E%99
+Gundae,히어로보드게임카페 건대1호점,113,보드카페,https://store.naver.com/restaurants/detail?entry=ple&id=36665455&query=%ED%9E%88%EC%96%B4%EB%A1%9C%EB%B3%B4%EB%93%9C%EA%B2%8C%EC%9E%84%EC%B9%B4%ED%8E%98%20%EA%B1%B4%EB%8C%801%ED%98%B8%EC%A0%90
+Gundae,히어로보드게임카페 건대본점,109,보드카페,https://store.naver.com/restaurants/detail?entry=ple&id=1878689397&query=%ED%9E%88%EC%96%B4%EB%A1%9C%EB%B3%B4%EB%93%9C%EA%B2%8C%EC%9E%84%EC%B9%B4%ED%8E%98%20%EA%B1%B4%EB%8C%80%EB%B3%B8%EC%A0%90
+Gundae,마스터키 건대점,89,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=1674123969&query=%EB%A7%88%EC%8A%A4%ED%84%B0%ED%82%A4%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,룸메이트,69,룸카페,https://store.naver.com/restaurants/detail?entry=ple&id=1779831243&query=%EB%A3%B8%EB%A9%94%EC%9D%B4%ED%8A%B8
+Gundae,앨리스룸카페,60,룸카페,https://store.naver.com/restaurants/detail?entry=ple&id=1611454917&query=%EC%95%A8%EB%A6%AC%EC%8A%A4%EB%A3%B8%EC%B9%B4%ED%8E%98
+Gundae,허니룸카페,39,룸카페,https://store.naver.com/restaurants/detail?entry=ple&id=1795366997&query=%ED%97%88%EB%8B%88%EB%A3%B8%EC%B9%B4%ED%8E%98
+Gundae,트루이스케이프 건대점,36,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=47702042&query=%ED%8A%B8%EB%A3%A8%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,스위트룸카페,35,룸카페,https://store.naver.com/restaurants/detail?entry=ple&id=36341167&query=%EC%8A%A4%EC%9C%84%ED%8A%B8%EB%A3%B8%EC%B9%B4%ED%8E%98
+Gundae,화이트캐슬,32,룸카페,https://store.naver.com/restaurants/detail?entry=ple&id=20336214&query=%ED%99%94%EC%9D%B4%ED%8A%B8%EC%BA%90%EC%8A%AC
+Gundae,라임,32,보드카페,https://store.naver.com/restaurants/detail?entry=ple&id=36854229&query=%EB%9D%BC%EC%9E%84
+Gundae,비밀의화원 포레스트,29,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=1945752410&query=%EB%B9%84%EB%B0%80%EC%9D%98%ED%99%94%EC%9B%90%20%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8
+Gundae,리얼샷 사격양궁장실내카페,28,사격장,https://store.naver.com/restaurants/detail?entry=ple&id=1504066713&query=%EB%A6%AC%EC%96%BC%EC%83%B7%20%EC%82%AC%EA%B2%A9%EC%96%91%EA%B6%81%EC%9E%A5%EC%8B%A4%EB%82%B4%EC%B9%B4%ED%8E%98
+Gundae,락큐 포켓볼 클럽,19,당구장,https://store.naver.com/restaurants/detail?entry=ple&id=567710893&query=%EB%9D%BD%ED%81%90%20%ED%8F%AC%EC%BC%93%EB%B3%BC%20%ED%81%B4%EB%9F%BD
+Gundae,트루이스케이프룸 어덜트 건대점,16,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=1111909502&query=%ED%8A%B8%EB%A3%A8%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84%EB%A3%B8%20%EC%96%B4%EB%8D%9C%ED%8A%B8%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,데이아웃 트레블카페,11,테마카페,https://store.naver.com/restaurants/detail?entry=ple&id=38287457&query=%EB%8D%B0%EC%9D%B4%EC%95%84%EC%9B%83%20%ED%8A%B8%EB%A0%88%EB%B8%94%EC%B9%B4%ED%8E%98
+Gundae,마스터키 프라임 건대점,9,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=1994695749&query=%EB%A7%88%EC%8A%A4%ED%84%B0%ED%82%A4%20%ED%94%84%EB%9D%BC%EC%9E%84%20%EA%B1%B4%EB%8C%80%EC%A0%90
+Gundae,트루이스케이프룸 건대2호점,3,방탈출카페,https://store.naver.com/restaurants/detail?entry=ple&id=1257477113&query=%ED%8A%B8%EB%A3%A8%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84%EB%A3%B8%20%EA%B1%B4%EB%8C%802%ED%98%B8%EC%A0%90
+Gundae,베스트홀덤바,[],보드카페,https://store.naver.com/restaurants/detail?entry=ple&id=1009961810&query=%EB%B2%A0%EC%8A%A4%ED%8A%B8%ED%99%80%EB%8D%A4%EB%B0%94
