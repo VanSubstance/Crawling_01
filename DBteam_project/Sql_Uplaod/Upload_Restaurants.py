@@ -7,8 +7,7 @@ for i in station:
     excel = 'E:/Studying/DB/Crawling_01/DBteam_project/Restaurant/excel/' + i + '.csv'
     data = pd.read_csv(excel, encoding='cp949')
 
-    "SQL에 업로드할 정보가 담긴 존나 큰 튜플덩어리"
-    case = []
+    
     
     "sql 파일 만들기"
     sql = "E:/Studying/DB/Crawling_01/DBteam_project/Restaurant/sql/" + i + ".sql"
@@ -19,6 +18,8 @@ for i in station:
     "data의 행 수만큼 반복"
     "case에 sql 언어로 작성해서 sql 파일에 기제"
     for i in range(data.shape[0]):
+        "SQL에 업로드할 정보가 담긴 존나 큰 튜플덩어리"
+        case = []
         line = data.iloc[i]
         case.append("insert into RESTAURANTS (STATION_NAME, PLACE_NAME, REV_NUM, CTGR, URL) values (")
         case.append("\'%s\'" % line[0])
