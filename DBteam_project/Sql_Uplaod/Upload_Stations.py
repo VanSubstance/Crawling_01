@@ -14,7 +14,7 @@ T.write("SET DEFINE OFF;\n")
 "case에 sql 언어로 작성해서 sql 파일에 기제"
 for i in range(data.shape[0]):
     line = data.iloc[i]
-    case.append("insert into STATIONS (STATION_NAME, RATE) values (")
+    case.append("insert into mysql.STATIONS (STATION_NAME, RATE) values (")
     case.append("\'%s\'" % line[0])
     case.append(", \'%f\'" % line[1])
     case.append(");\n")

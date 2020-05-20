@@ -21,7 +21,15 @@ for i in station:
         "SQL에 업로드할 정보가 담긴 존나 큰 튜플덩어리"
         case = []
         line = data.iloc[i]
-        case.append("insert into PLACES (STATION_NAME, PLACE_NAME, REV_NUM, CTGR, URL) values (")
+        for j in range(len(line)):
+            if type(line[j]) is str:   
+                temp = list(line[j]) 
+                for k in range(len(temp)):
+                    if temp[k] == '&':
+                        temp[k] = '\&'
+                temp = ''.join(temp)
+                line[j] = temp        
+        case.append("insert into mysql.PLACES (STATION_NAME, PLACE_NAME, REV_NUM, CTGR, URL) values (")
         case.append("\'%s\'" % line[0])
         case.append(", \'%s\'" % line[1])
         case.append(", \'%s\'" % line[2])
