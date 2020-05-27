@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getRandom(max) {
+            return (Math.floor(Math.random() * max)) + 1;
+        }
+        for (var i = 0; i < 5; i++) {
+            var a = getRandom(100);
+            if (a >= 50) {
+                alert('Yo, ' + a + ' is greater than or equal to 50.');
+            }
+            else {
+                alert('Hey, ' + a + ' is less than 50.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name = "f1">
+        <input type = "text" name = "input01" value = "" size = 5>
+        <input type = "text" name = "operator" value = "" size = 1>
+        <input type = "text" name = "input02" value = "" size = 5>
+        =
+        <input type = "text" name = "output" value = "" size = 15>
+        <br />
+        <br />
+        <input type = "button" onclick = "add()" value = "+">
+        <input type = "button" onclick = "sub()" value = "-">
+        <input type = "button" onclick = "tim()" value = "X">
+        <input type = "button" onclick = "div()" value = "/">
+    </form>
+    <script>
+        function add() {
+            window.document.f1.output.value = parseInt(window.document.f1.input01.value) 
+            + parseInt(window.document.f1.input02.value);
+            window.document.f1.operator.value = '+';
+        }
+        function sub() {
+            window.document.f1.output.value = parseInt(window.document.f1.input01.value) 
+            - parseInt(window.document.f1.input02.value);
+            window.document.f1.operator.value = '-';
+        }
+        function tim() {
+            window.document.f1.output.value = parseInt(window.document.f1.input01.value) 
+            * parseInt(window.document.f1.input02.value);
+            window.document.f1.operator.value = 'X';
+        }
+        function div() {
+            if (parseInt(window.document.f1.input02.value) != 0) {
+                window.document.f1.output.value = parseInt(window.document.f1.input01.value) 
+            / parseInt(window.document.f1.input02.value);
+            } 
+            else {
+                window.document.f1.output.value = 'Unable to divide';
+            }
+            window.document.f1.operator.value = '/';
+        }
+    </script>
+</body>
+</html>
