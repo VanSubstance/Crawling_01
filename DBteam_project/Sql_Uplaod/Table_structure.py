@@ -9,8 +9,8 @@
 T = open('Table_Station.sql', 'w')
 
 "테이블 생성 코드 작성"
-T.write("SET DEFINE OFF;\n")
-T.write("DROP TABLE STATIONS;\n")
+#T.write("SET DEFINE OFF;\n")
+#T.write("DROP TABLE STATIONS;\n")
 T.write("create table STATIONS (STATION_NAME varchar(60), RATE FLOAT(1));\n")
 "STATION_NAME을 Primary Key로 사용"
 T.write("CREATE UNIQUE INDEX STATION_NAME_PK ON STATIONS (STATION_NAME);\n")
@@ -22,8 +22,8 @@ T.write("ALTER TABLE STATIONS ADD CONSTRAINT STATION_NAME_PK PRIMARY KEY (STATIO
 "2. 맛집 테이블"
 """
 T = open('Table_Restaurant.sql', 'w')
-T.write("SET DEFINE OFF;\n")
-T.write("DROP TABLE RESTAURANTS;\n")
+#T.write("SET DEFINE OFF;\n")
+#T.write("DROP TABLE RESTAURANTS;\n")
 T.write("create table RESTAURANTS (STATION_NAME varchar(60), RESTAURANT_NAME varchar(60), REV_NUM varchar(60), CTGR varchar(60), URL varchar(400));\n")
 "RESTAURANTS_NAME을 Primary Key로 사용"
 T.write("CREATE UNIQUE INDEX RESTAURANT_NAME_PK ON RESTAURANTS (RESTAURANT_NAME);\n")
@@ -38,8 +38,8 @@ T.write("ALTER TABLE RESTAURANTS ADD CONSTRAINT RESTAURANT_FK FOREIGN KEY (STATI
 "3. 놀거리 테이블"
 """
 T = open('Table_Activity.sql', 'w')
-T.write("SET DEFINE OFF;\n")
-T.write("DROP TABLE ACTIVITIES;\n")
+#T.write("SET DEFINE OFF;\n")
+#T.write("DROP TABLE ACTIVITIES;\n")
 T.write("create table ACTIVITIES (STATION_NAME varchar(60), ACTIVITY_NAME varchar(60), REV_NUM varchar(60), CTGR varchar(60), URL varchar(400));\n")
 "RESTAURANTS_NAME을 Primary Key로 사용"
 T.write("CREATE UNIQUE INDEX ACTIVITY_NAME_PK ON ACTIVITIES (ACTIVITY_NAME);\n")
@@ -54,8 +54,8 @@ T.write("ALTER TABLE ACTIVITIES ADD CONSTRAINT ACTIVITIES_FK FOREIGN KEY (STATIO
 "4. 명소 테이블"
 """
 T = open('Table_Places.sql', 'w')
-T.write("SET DEFINE OFF;\n")
-T.write("DROP TABLE PLACES;\n")
+#T.write("SET DEFINE OFF;\n")
+#T.write("DROP TABLE PLACES;\n")
 T.write("create table PLACES (STATION_NAME varchar(60), PLACE_NAME varchar(60), REV_NUM varchar(60), CTGR varchar(60), URL varchar(400));\n")
 "RESTAURANTS_NAME을 Primary Key로 사용"
 T.write("CREATE UNIQUE INDEX PLACE_NAME_PK ON PLACES (PLACE_NAME);\n")

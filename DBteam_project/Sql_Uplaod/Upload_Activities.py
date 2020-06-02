@@ -13,7 +13,7 @@ for i in station:
     sql = "E:/Studying/DB/Crawling_01/DBteam_project/Activity/sql/" + i + ".sql"
     T = open(sql, "w+t")
     
-    T.write("SET DEFINE OFF;\n")
+    #T.write("SET DEFINE OFF;\n")
 
     "data의 행 수만큼 반복"
     "case에 sql 언어로 작성해서 sql 파일에 기제"
@@ -29,7 +29,7 @@ for i in station:
                         temp[k] = '\&'
                 temp = ''.join(temp)
                 line[j] = temp
-        case.append("insert into mysql.ACTIVITIES (STATION_NAME, ACTIVITY_NAME, REV_NUM, CTGR, URL) values (")
+        case.append("insert into ACTIVITIES (STATION_NAME, ACTIVITY_NAME, REV_NUM, CTGR, URL) values (")
         case.append("\'%s\'" % line[0])
         case.append(", \'%s\'" % line[1])
         case.append(", \'%s\'" % line[2])
