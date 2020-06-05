@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        form {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body name = "body">
+    <div style="
+    width: 100%;
+    height: 100%;
+    ">
+        <h2>
+            <div style="
+            width: 200px;
+            height: 50px;
+            margin-left: 50%;
+            ">Service Title</div>
+        </h2>
+        <div style="
+        width: 100%;
+        margin-left: 0px;">
+            <!-- 지역 선택 라인-->
+            <ul style="
+            padding-left: 0px;
+            border-right: 2px solid;
+            float: left;
+            box-sizing: border-box;">
+                <li>
+                    <p style="
+                    text-align: center;">
+                        지역 선택 <br />
+                    </p>
+                    <ul type="">
+                        <li style="
+                        width: 200px;
+                        height: 50px;">
+                            <input type="checkbox" name="station" value="Gundae" id="GundaeCheckbox">
+                            <label for="GundaeCheckbox">건대입구역</label>
+                        </li>
+                        <li style="
+                        width: 200px;
+                        height: 50px;">
+                            <input type="checkbox" name="station" value="Yeouido" id="YeouidoCheckbox">
+                            <label for="YeouidoCheckbox">여의도역</label>
+                        </li>
+                        <li style="
+                        width: 200px;
+                        height: 50px;">
+                            <input type="checkbox" name="station" value="Chunho" id="ChunhoCheckbox">
+                            <label for="ChunhoCheckbox">천호역</label>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- 카테고리 선택 라인-->
+            <ul style="
+            padding-left: 0px;
+            border-right: 2px solid;
+            float: left;
+            box-sizing: border-box;">
+                <li>
+                    <p style="
+                    text-align: center;">
+                        카테고리 선택 <br />
+                    </p>
+                    <ul type="">
+                        <li style="
+                        width: 200px;
+                        height: 50px;">
+                            <input type="checkbox" name="ctgr" value="activity" id="ActivityCheckbox" 
+                            onclick="checkUnder('ActivityCheckbox', ['ExhibitionCheckbox', 'ExperienceCheckbox', 'ParkCheckbox'])">
+                            <label for="ActivityCheckbox">엑티비티</label>
+                            <!-- 엑티비티 세부선택-->
+                            <li>
+                                <ul name = "activityDetail"
+                                type="">
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="activity" value="exhibition" id="ExhibitionCheckbox" onclick="checkActivity('ExhibitionCheckbox')">
+                                        <label for="ExhibitionCheckbox">전시, 관람</label>
+                                        
+                                    </li>
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="activity" value="experience" id="ExperienceCheckbox" onclick="checkActivity('ExperienceCheckbox')">
+                                        <label for="ExperienceCheckbox">체험</label>
+                                    </li>
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="activity" value="park" id="ParkCheckbox" onclick="checkActivity('ParkCheckbox')">
+                                        <label for="ParkCheckbox">공원</label>
+                                    </li>
+                                </ul>
+                            </li>
+                        </li>
+                        <li style="
+                        width: 200px;
+                        height: 50px;">
+                            <input type="checkbox" name="ctgr" value="place" id="PlaceCheckbox" 
+                            onclick="checkUnder('PlaceCheckbox', ['SingingRoomCheckbox', 'PCRoomCheckbox', 'BoardgameCheckbox', 'ArcadeCheckbox'])">
+                            <label for="PlaceCheckbox">장소</label>
+                            <!-- 장소 세부선택-->
+                            <li>
+                                <ul name = "placeDetail"
+                                type="">
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="place" value="singingroom" id="SingingRoomCheckbox" onclick="checkPlace('SingingRoomCheckbox')">
+                                        <label for="SingingRoomCheckbox">노래방</label>
+                                        
+                                    </li>
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="place" value="pcroom" id="PCRoomCheckbox" onclick="checkPlace('PCRoomCheckbox')">
+                                        <label for="PCRoomCheckbox">PC방</label>
+                                    </li>
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="place" value="boardgame" id="BoardgameCheckbox" onclick="checkPlace('BoardgameCheckbox')">
+                                        <label for="BoardgameCheckbox">보드게임</label>
+                                    </li>
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="place" value="arcade" id="ArcadeCheckbox" onclick="checkPlace('ArcadeCheckbox')">
+                                        <label for="ArcadeCheckbox">오락</label>
+                                    </li>
+                                </ul>
+                            </li>
+                        </li>
+                        <li style="
+                        width: 200px;
+                        height: 50px;">
+                            <input type="checkbox" name="ctgr" value="restaurant" id="RestaurantCheckbox" 
+                            onclick="checkUnder('RestaurantCheckbox', ['CafeCheckbox', 'EasternCheckbox', 'WesternCheckbox', 'JapanCheckbox', 'KoreaCheckbox', 'BarCheckbox'])">
+                            <label for="RestaurantCheckbox">식당</label>
+                            <!-- 식당 세부선택-->
+                            <li>
+                                <ul name = "restaurantDetail"
+                                type="">
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="restaurant" value="cafe" id="CafeCheckbox" onclick="checkRestaurant('CafeCheckbox')">
+                                        <label for="CafeCheckbox">카페, 디저트</label>
+                                    </li>
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="restaurant" value="eastern" id="EasternCheckbox" onclick="checkRestaurant('EasternCheckbox')">
+                                        <label for="EasternCheckbox">중식, 동양식</label>
+                                    </li>
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="restaurant" value="western" id="WesternCheckbox" onclick="checkRestaurant('WesternCheckbox')">
+                                        <label for="WesternCheckbox">양식, 서양식</label>
+                                    </li>
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="restaurant" value="japan" id="JapanCheckbox" onclick="checkRestaurant('JapanCheckbox')">
+                                        <label for="JapanCheckbox">일식</label>
+                                    </li>
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="restaurant" value="korea" id="KoreaCheckbox" onclick="checkRestaurant('KoreaCheckbox')">
+                                        <label for="KoreaCheckbox">한식</label>
+                                    </li>
+                                    <li style="
+                                    width: 200px;
+                                    height: 50px;">
+                                        <input type="checkbox" name="restaurant" value="bar" id="BarCheckbox" onclick="checkRestaurant('BarCheckbox')">
+                                        <label for="BarCheckbox">야식, 술집</label>
+                                    </li>
+                                </ul>
+                            </li>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- 결과 버튼 -->
+            <input type="button" name="result" onclick="showResult()" value="RESULT" style = "
+            width: 100px;
+            height: 40px;
+            margin-left: 25px;">
+        </div>
+    </div>
+    <script>
+        function checkActivity(str) {
+            if (window.document.getElementById(str).checked == true) {
+                window.document.getElementById('ActivityCheckbox').checked = true;
+            }
+            src = ['ExhibitionCheckbox', 'ExperienceCheckbox', 'ParkCheckbox'];
+            checkUpper(src, 'ActivityCheckbox');
+        }
+
+        function checkPlace(str) {
+            if (window.document.getElementById(str).checked == true) {
+                window.document.getElementById('PlaceCheckbox').checked = true;
+            }
+            src = ['SingingRoomCheckbox', 'PCRoomCheckbox', 'BoardgameCheckbox', 'ArcadeCheckbox'];
+            checkUpper(src, 'PlaceCheckbox');
+        }
+
+        function checkRestaurant(str) {
+            if (window.document.getElementById(str).checked == true) {
+                window.document.getElementById('RestaurantCheckbox').checked = true;
+            }
+            src = ['CafeCheckbox', 'EasternCheckbox', 'WesternCheckbox', 'JapanCheckbox', 'KoreaCheckbox', 'BarCheckbox'];
+            checkUpper(src, 'RestaurantCheckbox');
+        }
+
+        //checkUnder: src = 체크박스 id 어레이, dst = 대상 체크박스
+        //              src.checked가 전부 false라면 dst.checked도 false이다.
+        function checkUpper(src, dst) {
+            for (i = 0; i < src.length; i++) {
+                if (window.document.getElementById(src[i]).checked == true) {
+                    return 0;
+                }
+            }
+            window.document.getElementById(dst).checked = false;
+        }
+
+        //checkUpper: src = 상위 체크박스 1개, dst = 하위 체크박스 id 어레이
+        //              src를 체크하면 dst.checked가 전부 true가 된다.
+        //              src를 체크해제하면 dst.checked 가 전부 false가 된다
+        function checkUnder(src, dst) {
+            if (window.document.getElementById(src).checked == true) {
+                for (i = 0; i < dst.length; i++) {
+                    window.document.getElementById(dst[i]).checked = true;
+                }
+            } 
+            else {
+                for (i = 0; i < dst.length; i++) {
+                    window.document.getElementById(dst[i]).checked = false;
+                }
+            }           
+        }
+
+        function showResult() {
+
+        }
+
+        
+    </script>
+    </body>
+
+</html>
