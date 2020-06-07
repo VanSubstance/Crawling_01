@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Search</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+    </style>
+    <?php
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
+    $conn = mysqli_connect('localhost', 'root', '123456', 'mysql');
+
+    $stationArray = array();
+    ?>
+    <?php
+    $sql = "SELECT STATION_NAME as stationName FROM STATIONS";
+    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+    while ($row = mysqli_fetch_array($result)) {
+        array_push($stationArray, $row['stationName']);
+    }    
+    ?>
+    <script>
+        var stationOut = [];
+        var ctgrOut = [];
+        function attach(val) {
+            if (val.checked == true) {
+                if (val.name == 'station') {
+                    stationOut.push(val.value);
+                    stationOut.sort();
+                }
+                else {
+                    ctgrOut.push(val.value);
+                    ctgrOut.sort();
+                }
+            }
+            else {
+                if (val.name == 'station') {
+                    const i = stationOut.indexOf(val.value);
+                    if (i > -1) stationOut.splice(i , 1);
+                    stationOut.sort();
+                }
+                else {
+                    const i = ctgrOut.indexOf(val.value);
+                    if (i > -1) ctgrOut.splice(i , 1);
+                    ctgrOut.sort();
+                }
+            }
+            console.log(stationOut);
+            console.log(ctgrOut);
+        }
+        function showResult() {
+            for (var i = 0; i < stationOut.length; i++) {
+                station = stationOut[i];
+                for (var j = 0; j < ctgrOut.length; j++) {
+                    ctgr = ctgrOut[j];
+                    var body = document.getElementById("body");
+                    console.log(body);
+                    var result = document.createElement("div");
+                    result.innerHTML = " | " + station + " | " + ctgr + " | 에 대한 정보 리스트";
+                    result.setAttribute("id", "result");
+                    result.setAttribute("float", "left");
+                    console.log(result);
+                    body.appendChild(result);
+                }
+            }
+        }
+       /*
+       function showResult() {
+           var stationOutLength = $("input[name = 'station']").length;
+           stationOut = new Array(stationOutLength);
+           for (var i = 0; i < stationOutLength; i++) {
+               stationOut[i] = $("input[name = 'station']")[i].value;
+           }
+           var ctgrOutLength = $("input[name = 'ctgr']").length;
+           ctgrOut = new Array(ctgrOutLength);
+           for (var i = 0; i < ctgrOutLength; i++) {
+               ctgrOut[i] = $("input[name = 'ctgr']")[i].value;
+           }
+           for (var i = 0; i < stationOut.length; i++) {
+                station = stationOut[i];
+                for (var j = 0; j < ctgrOut.length; j++) {
+                    ctgr = ctgrOut[j];
+                    var body = document.getElementById("body");
+                    console.log(body);
+                    var result = document.createElement("div");
+                    result.innerHTML = " | " + station + " | " + ctgr + " | 에 대한 정보 리스트";
+                    result.setAttribute("id", "result");
+                    result.setAttribute("float", "left");
+                    console.log(result);
+                    body.appendChild(result);
+                }
+            }
+       }
+       */
+    </script>
+</head>
+
+<body id="body">
+    <h1>
+        Database Search
+    </h1>
+    <ul style="
+    width: 200px;
+    float: left;">
+        <p style="
+        text-align: center;
+        font-size: 25px;">
+            Choose Station
+        </p>
+        <?php
+        foreach ($stationArray as $stationName) {
+            echo '<li style= "width: 200px; height: 50px;">';
+            echo '<input type= "checkbox" name= "station" id= "'.$stationName;
+            echo 'Check" size= 20 value= "'.$stationName.'" onclick="attach(this)">';
+            echo '<label for= "'.$stationName.'Check" style="margin-left: 25px;">'.$stationName.'</label>';
+            echo '</li>';
+            echo '<br/>';
+        }
+        ?>
+    </ul>
+    <ul style="
+    width: 200px;
+    float: left;">
+        <p style="
+        text-align: center;
+        font-size: 25px;">
+            Choose Category
+        </p>
+        <li style="width: 200px; height: 50px;">
+            <input type="checkbox" name="ctgr" id="restaurantCheck" size=10 value="restaurant" onclick="attach(this)">
+            <label for="restaurantCheck" style="margin-left: 25px;">Restaurants</label>
+        </li>
+        <br />
+        <li style="width: 200px; height: 50px;">
+            <input type="checkbox" name="ctgr" id="activityCheck" size=10 value="activity" onclick="attach(this)">
+            <label for="activityCheck" style="margin-left: 25px;">Activities</label>
+        </li>
+        <br />
+        <li style="width: 200px; height: 50px;">
+            <input type="checkbox" name="ctgr" id="placeCheck" size=10 value="place" onclick="attach(this)">
+            <label for="placeCheck" style="margin-left: 25px;">Places</label>
+        </li>
+        <br />
+    </ul>
+    <input type="button" name="result" onclick="showResult()" value="RESULT" style="
+    width: 80px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 225px;
+    float: left;
+    ">
+</body>
+
+</html>

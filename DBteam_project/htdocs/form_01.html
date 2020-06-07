@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Search</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+    </style>
+    <?php
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
+    $conn = mysqli_connect('localhost', 'root', '123456', 'mysql');
+
+    $stationArray = array();
+    ?>
+    <?php
+    $sql = "SELECT STATION_NAME as stationName FROM STATIONS";
+    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+    while ($row = mysqli_fetch_array($result)) {
+        array_push($stationArray, $row['stationName']);
+    }    
+    ?>
+</head>
+
+<body id="body">
+    <h1>
+        Database Search
+    </h1>
+    <form action="result.php" method="POST">
+    <ul style="
+    width: 200px;
+    float: left;">
+        <p style="
+        text-align: center;
+        font-size: 25px;">
+            Choose Station
+        </p>
+        <?php
+        foreach ($stationArray as $stationName) {
+            echo '<li style= "width: 200px; height: 50px;">';
+            echo '<input type= "checkbox" name= "station[]" id= "'.$stationName;
+            echo 'Check" size= 20 value= "'.$stationName.'">';
+            echo '<label for= "'.$stationName.'Check" style="margin-left: 25px;">'.$stationName.'</label>';
+            echo '</li>';
+            echo '<br/>';
+        }
+        ?>
+    </ul>
+    <ul style="
+    width: 200px;
+    float: left;">
+        <p style="
+        text-align: center;
+        font-size: 25px;">
+            Choose Category
+        </p>
+        <li style="width: 200px; height: 50px;">
+            <input type="checkbox" name="ctgr[]" id="restaurantCheck" size=10 value="restaurant">
+            <label for="restaurantCheck" style="margin-left: 25px;">Restaurants</label>
+        </li>
+        <br />
+        <li style="width: 200px; height: 50px;">
+            <input type="checkbox" name="ctgr[]" id="activityCheck" size=10 value="activity">
+            <label for="activityCheck" style="margin-left: 25px;">Activities</label>
+        </li>
+        <br />
+        <li style="width: 200px; height: 50px;">
+            <input type="checkbox" name="ctgr[]" id="placeCheck" size=10 value="place">
+            <label for="placeCheck" style="margin-left: 25px;">Places</label>
+        </li>
+        <br />
+    </ul>
+    <input type="submit" value="RESULT">
+    </form>
+    
+
+</body>
+
+</html>

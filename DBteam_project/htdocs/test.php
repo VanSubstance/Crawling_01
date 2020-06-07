@@ -39,7 +39,7 @@ while ($row = mysqli_fetch_array($result)) {
     '</p>';
 }
 
-$sql = "SELECT * FROM RESTAURANTS where STATION_NAME = 'Chunho'";
+$sql = "SELECT * FROM RESTAURANTS";
 echo "삽입할 쿼리: $sql<br/>";
 $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 while ($row = mysqli_fetch_array($result)) {
