@@ -1,9 +1,7 @@
 import pandas as pd
 import os
 
-station_csv = (os.path.dirname(os.getcwd()) + "\\Station\\Stations.csv").replace("\\", "/")
-StationList = pd.read_csv(station_csv, encoding = 'cp949')
-station = StationList.values[:, 0]
+station = ['Line_08']
 
 dir_excel = (os.path.dirname(os.getcwd()) + "\\Restaurant").replace("\\", "/")
 
@@ -24,7 +22,7 @@ for i in station:
     for i in range(data.shape[0]):
         "SQL에 업로드할 정보가 담긴 존나 큰 튜플덩어리"
         case = []
-        line = data.iloc[i]
+        line = data.iloc[i].copy()
         for j in range(len(line)):
             if type(line[j]) is str:   
                 temp = list(line[j]) 
@@ -33,17 +31,15 @@ for i in station:
                         temp[k] = '\&'
                 temp = ''.join(temp)
                 line[j] = temp
-        case.append("insert into RESTAURANTS (STATION_NAME, RESTAURANT_NAME, REV_NUM, CTGR, URL) values (")
-        case.append("\'%s\'" % line[0])
-        case.append(", \'%s\'" % line[1])
+        case.append("insert ignore into RESTAURANTS (STATION_NAME, RESTAURANT_NAME, REV_NUM, CTGR, URL) values (")
+        case.append("\'%s\'" % line[1])
         case.append(", \'%s\'" % line[2])
         case.append(", \'%s\'" % line[3])
         case.append(", \'%s\'" % line[4])
+        case.append(", \'%s\'" % line[5])
         case.append(");\n")
         
         for i in case:
             T.write(i)
             
     T.close()
-
-    

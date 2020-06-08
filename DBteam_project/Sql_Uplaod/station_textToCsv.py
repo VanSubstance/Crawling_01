@@ -1,4 +1,8 @@
 import os
+import csv
+dir_csv = (os.path.dirname(os.getcwd()) + "\\Station\\Stations.csv").replace("\\", "/")
+
+csv_file = open(dir_csv, "w+t", newline = '')
 
 line_1 = ['Soyosan Station', 'Dongducheon Station', 'Bosan Station', 'Dongducheon Central Station', 'Jihaeng Station', 'Deokjeong Station', 'Deokgye Station', 'Yangju Station', 'Nokyang Station', 'possible station', 'Uijeongbu Station', 'Hoeryong Station', 'Mangwolsa Station', 'Dobongsan Station', 'Dobong Station', 'Banghak Station', 'Changdong Station', 'Nokcheon Station', 'Wolgye Station', 'Kwangwoon University Station', 'Seokgye Station', 'Sinimun Station', 'Hankuk University of Foreign Studies station', 'Hoegi Station', 'Cheongnyangni Station', 'Jegi-dong Station', 'Sinseol-dong Station', 'Dongmyo Station', 'Dongdaemun Station', 'Jongno 5-ga Station', 'Jongno 3-ga Station', 'Jonggak Station', 'City Hall Station', 'Seoul Station', 'Namyeong Station', 'Yongsan Station', 'Noryangjin Station', 'Daebang Station', 'Singil Station', 'Yeongdeungpo Station', 'Sindorim Station', 'Guro Station', 'Guil Station', 'opening station', 'Oryu-dong Station', 'Onsu Station', 'Yeokgok Station', 'Sosa Station', 'Bucheon Station', 'Jungdong Station', 'Songnae Station', 'Bugae Station', 'Bupyeong Station', 'Baegun Station', 'Dongam Station', 'Ganseok Station', 'Juan Station', 'Dohwa Station', 'Jemulpo Station', 'Dowon Station', 'East Incheon Station', 'Incheon Station', 'Gasan Digital Complex Area', 'Doksan Station', 'Geumcheon-gu Office Station', 'Gwangmyeong Station', 'Seoksu Station', 'Gwanak Station', 'Anyang Station', 'Myeonghak Station', 'Geumjeong Station', 'Gunpo Station', 'Dangjeong Station', 'Uiwang Station', 'Sungkyunkwan University Station', 'Hwaseo Station', 'Suwon Station', 'Seryu Station', 'Byeongjeom Station', 'Seodongtan Station', 'Sema Station', 'Osan University Station', 'Osan Station', 'Jinwi Station', 'Songtan Station', 'Seojeongri Station', 'Jije Station', 'Pyeongtaek Station', 'Seonghwan Station', 'Jiksan Station', 'Dujeong Station', 'Cheonan Station', 'Bongmyeong Station', 'Ssangyong Station', 'Asan Station', 'Baebang Station', 'Onyang Hot Spring Station', 'Sinchang Station']
 line_2 = ['City Hall Station', 'Euljiro Station', 'Euljiro 3-ga Station', 'Euljiro 4-ga Station', 'Dongdaemun History and Culture Park Station', 'Sindang Station', 'Sangwangsimni Station', 'Wangsimni Station', 'Hanyang University Station', 'Ttukseom Station', 'Seongsu Station', 'Yongdap Station', 'Sindap Station', 'Yongdu Station', 'Sinseol-dong Station', 'Konkuk University Station', 'Guui Station', 'Gangbyeon Station', 'Jamsilnaru Station', 'Jamsil Station', 'Jamsil Saenae Station', 'Sports Complex Station', 'Samseong Station', 'Seonreung Station', 'Yeoksam Station', 'Gangnam Station', 'abutment station', 'Seocho Station', 'Bangbae Station', 'Sadang Station', 'Nakseongdae Station', 'Seoul National University Station', 'Bongcheon Station', 'Sillim Station', 'Sindaebang Station', 'Guro Digital Complex Area', 'Daelim Station', 'Sindorim Station', 'Dorimcheon Station', 'Yangcheon-gu Office Station', 'Sinjeongnegeori Station', 'Kkachisan Station', 'Munrae Station', 'Yeongdeungpo-gu Office Station', 'Dangsan Station', 'Hapjeong Station', 'Hongdae Station', 'Sinchon Station', 'Ewha Womans University Station', 'Ahyeon Station', 'Chungjeongno Station']
@@ -11,28 +15,15 @@ line_8 = ['Amsa Station', 'Cheonho Station', 'Gangdong-gu Office Station', 'Mong
 line_9 = ['Gaehwa Station', 'Gimpo Airport Station', 'Airport Market Station', 'Sinbanghwa Station', 'Magoknaru Station', 'Yangcheonhyanggyo Station', 'Gayang Station', 'Jeungmi Station', 'Deungchon Station', 'Yeomchang Station', 'Sinmok-dong Station', 'Seonyudo Station', 'Dangsan Station', 'National Assembly Building Station', 'Yeouido Station', 'Saetgang Station', 'Noryangjin Station', 'Nodeul Station', 'Heukseok Station', 'Dongjak Station', 'Gubanpo Station', 'Sinbanpo Station', 'Express Bus Terminal Station', 'Sapyeong Station', 'Sinnonhyeon Station', 'Eonju Station', 'Seonjeongneung Station', 'Samseong Central Station', 'Bongeunsa Station', 'Sports Complex Station', 'Samjeon Station', 'Seokchon Ancient Tombs Station', 'Seokchon Station', 'Songpa Naru Station', 'Hansung Baekje Station', 'Olympic Park Station', 'Dunchon Oryun Station', 'Central Veterans Hospital Station']
 data = [line_1, line_2, line_3, line_4, line_5, line_6, line_7, line_8, line_9]
 
-"sql 파일 만들기"
-dir_py = os.getcwd()
-dir_py = os.path.dirname(dir_py)
-dir_py += "\\Station\\Stations.sql"
-dir_py = dir_py.replace("\\", "/")
-T = open(dir_py, "w+t")
+wr = csv.writer(csv_file)
 
-"SQL에 업로드할 정보가 담긴 존나 큰 튜플덩어리"
-case = []
-
-"line_n의 행 수만큼 반복"
-"case에 sql 언어로 작성해서 sql 파일에 기제"
 for line in data:
+    i = 1
     for station in line:
         station = station.replace("\'", "\\\'")
         station = station.replace(" station", "")
         station = station.replace(" Station", "")
-        case.append("insert ignore into STATIONS (STATION_NAME) values (")
-        case.append("\'%s\'" % station)
-        case.append(");\n")
-    
-for i in case:
-    T.write(i)
-    
-T.close()
+        wr.writerow([station, i])
+    i += 1
+csv_file.close()
+

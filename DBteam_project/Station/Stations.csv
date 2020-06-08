@@ -1,4 +1,436 @@
-ï»¿name,rate
-Gundae,4.4
-Chunho,3.7
-Yeouido,4.1
+Soyosan,1
+Dongducheon,1
+Bosan,1
+Dongducheon Central,1
+Jihaeng,1
+Deokjeong,1
+Deokgye,1
+Yangju,1
+Nokyang,1
+possible,1
+Uijeongbu,1
+Hoeryong,1
+Mangwolsa,1
+Dobongsan,1
+Dobong,1
+Banghak,1
+Changdong,1
+Nokcheon,1
+Wolgye,1
+Kwangwoon University,1
+Seokgye,1
+Sinimun,1
+Hankuk University of Foreign Studies,1
+Hoegi,1
+Cheongnyangni,1
+Jegi-dong,1
+Sinseol-dong,1
+Dongmyo,1
+Dongdaemun,1
+Jongno 5-ga,1
+Jongno 3-ga,1
+Jonggak,1
+City Hall,1
+Seoul,1
+Namyeong,1
+Yongsan,1
+Noryangjin,1
+Daebang,1
+Singil,1
+Yeongdeungpo,1
+Sindorim,1
+Guro,1
+Guil,1
+opening,1
+Oryu-dong,1
+Onsu,1
+Yeokgok,1
+Sosa,1
+Bucheon,1
+Jungdong,1
+Songnae,1
+Bugae,1
+Bupyeong,1
+Baegun,1
+Dongam,1
+Ganseok,1
+Juan,1
+Dohwa,1
+Jemulpo,1
+Dowon,1
+East Incheon,1
+Incheon,1
+Gasan Digital Complex Area,1
+Doksan,1
+Geumcheon-gu Office,1
+Gwangmyeong,1
+Seoksu,1
+Gwanak,1
+Anyang,1
+Myeonghak,1
+Geumjeong,1
+Gunpo,1
+Dangjeong,1
+Uiwang,1
+Sungkyunkwan University,1
+Hwaseo,1
+Suwon,1
+Seryu,1
+Byeongjeom,1
+Seodongtan,1
+Sema,1
+Osan University,1
+Osan,1
+Jinwi,1
+Songtan,1
+Seojeongri,1
+Jije,1
+Pyeongtaek,1
+Seonghwan,1
+Jiksan,1
+Dujeong,1
+Cheonan,1
+Bongmyeong,1
+Ssangyong,1
+Asan,1
+Baebang,1
+Onyang Hot Spring,1
+Sinchang,1
+City Hall,1
+Euljiro,1
+Euljiro 3-ga,1
+Euljiro 4-ga,1
+Dongdaemun History and Culture Park,1
+Sindang,1
+Sangwangsimni,1
+Wangsimni,1
+Hanyang University,1
+Ttukseom,1
+Seongsu,1
+Yongdap,1
+Sindap,1
+Yongdu,1
+Sinseol-dong,1
+Konkuk University,1
+Guui,1
+Gangbyeon,1
+Jamsilnaru,1
+Jamsil,1
+Jamsil Saenae,1
+Sports Complex,1
+Samseong,1
+Seonreung,1
+Yeoksam,1
+Gangnam,1
+abutment,1
+Seocho,1
+Bangbae,1
+Sadang,1
+Nakseongdae,1
+Seoul National University,1
+Bongcheon,1
+Sillim,1
+Sindaebang,1
+Guro Digital Complex Area,1
+Daelim,1
+Sindorim,1
+Dorimcheon,1
+Yangcheon-gu Office,1
+Sinjeongnegeori,1
+Kkachisan,1
+Munrae,1
+Yeongdeungpo-gu Office,1
+Dangsan,1
+Hapjeong,1
+Hongdae,1
+Sinchon,1
+Ewha Womans University,1
+Ahyeon,1
+Chungjeongno,1
+Wonheung,1
+Daehwa,1
+Juyeop,1
+Jeongbalsan,1
+Madu,1
+Baekseok,1
+Daegok,1
+Hwajeong,1
+Wondang,1
+Samsong,1
+Jichuk,1
+Gupabal,1
+Yeonsinnae,1
+Bulgwang,1
+Nokbeon,1
+Hongje,1
+Muakjae,1
+Independence Literature Translation,1
+Gyeongbokgung,1
+Anguk,1
+Jongno 3-ga,1
+Euljiro 3-ga,1
+Chungmuro,1
+Dongdaegu,1
+Yaksu,1
+Kumho,1
+Oksu,1
+Apgujeong,1
+Sinsa,1
+Jamwon,1
+Express Bus Terminal,1
+abutment,1
+Nambu Terminal,1
+Yangjae,1
+Maebong,1
+Dogok,1
+Daechi,1
+Hakyeoul,1
+Daecheong,1
+Ilwon,1
+Suseo,1
+Garak Market,1
+Police Hospital,1
+Ogeum,1
+Dangogae,1
+Sanggye,1
+Nowon,1
+Changdong,1
+Ssangmun,1
+Suyu,1
+Mia,1
+Mia Intersection,1
+Gileum,1
+Sungshin Women\'s University,1
+Hansung University,1
+Hyehwa,1
+Dongdaemun,1
+Dongdaemun History and Culture Park,1
+Chungmuro,1
+Myeong-dong,1
+Hoehyeon,1
+Seoul,1
+Sookmyung University,1
+Triangle area,1
+Shinyongsan,1
+Ichon,1
+Dongjak,1
+Isu,1
+Sadang,1
+Namtaryeong,1
+Sunbawi,1
+Gyeongma Park,1
+Grand Park,1
+Gwacheon,1
+Gwacheon Government Complex,1
+Indeokwon,1
+Pyeongchon,1
+Beomgye,1
+Geumjeong,1
+Sanbon,1
+Surisan,1
+Daeyami,1
+Banwol,1
+Sangnoksu,1
+Hankuk University,1
+Central,1
+Gojan,1
+super-region,1
+Ansan,1
+Singil Oncheon,1
+Jeongwang,1
+Oido,1
+Banghwa,1
+Gaehwasan,1
+Gimpo Airport,1
+Songjeong,1
+Magok,1
+Balsan,1
+Ujangsan,1
+Hwagok,1
+Kkachisan,1
+Sinjeong,1
+Mokdong,1
+Omok Bridge,1
+Yangpyeong,1
+Yeongdeungpo-gu Office,1
+Yeongdeungpo Market,1
+Singil,1
+Yeouido,1
+Y ¿©ÀÇinaru,1
+Mapo,1
+Gongdeok,1
+Aeogae,1
+Chungjeongno,1
+Seodaemun,1
+Gwanghwamun,1
+Jongno 3-ga,1
+Euljiro 4-ga,1
+Dongdaemun History and Culture Park,1
+Cheonggu,1
+Singeumho,1
+Haengdang,1
+Wangsimni,1
+Majang,1
+Dapsimni,1
+Janghanpyeong,1
+Gunja,1
+Achasan,1
+Gwangnaru,1
+Cheonho,1
+Gangdong,1
+Gildong,1
+Bendari,1
+Myeongil,1
+Godeok,1
+Sangil-dong,1
+Dunchon-dong,1
+Olympic Park,1
+Bangi,1
+Ogeum,1
+Gaerong,1
+Geoyeo,1
+Macheon,1
+Eungam,1
+Yeokchon,1
+Bulgwang,1
+Dokbawi,1
+Yeonsinnae,1
+Gusan,1
+Saejeol,1
+Jeungsan,1
+Digital Media City,1
+World Cup Stadium,1
+Mapo-gu Office,1
+Mangwon,1
+Hapjeong,1
+Sangsu,1
+Gwangheungchang,1
+Daeheung,1
+Gongdeok,1
+Hyochang Park,1
+Triangle area,1
+Noksapyeong,1
+Itaewon,1
+Hangangjin,1
+Bertigogae,1
+Yaksu,1
+Cheonggu,1
+Sindang,1
+Dongmyo,1
+Changshin,1
+Bomun,1
+Anam,1
+Korea University,1
+Wolgok,1
+Sangwolgok,1
+Dolgotji,1
+Seokgye,1
+Taereung,1
+Hwarangdae,1
+Bonghwasan,1
+Jangam,1
+Dobongsan,1
+Suraksan,1
+Madele,1
+Nowon,1
+relay,1
+Summer,1
+Gongneung,1
+Taereung,1
+Mukgol,1
+Junghwa,1
+Sangbong,1
+Myeonmok,1
+Sagam,1
+Yongmasan,1
+Junggok,1
+Gunja,1
+Children\'s Grand Park,1
+Konkuk University,1
+Ttuk Textile Garden Area,1
+Cheongdam,1
+Gangnam-gu Office,1
+Hakdong,1
+Nonhyeon,1
+Banpo,1
+Express Bus Terminal,1
+Naebang,1
+Isu,1
+Namseong,1
+Soongsil University,1
+Sangdo,1
+Jangseungbaegi,1
+Sindaebang Samgeori,1
+Boramae,1
+Sinpung,1
+Daelim,1
+Namguro,1
+Gasan Digital Complex Area,1
+Cheolsan,1
+Gwangmyeong Intersection,1
+Cheonwang,1
+Onsu,1
+Kkachiul,1
+Bucheon Stadium,1
+Chunui,1
+Sinjung-dong,1
+Bucheon City Hall,1
+Sangdong,1
+Samsan Gymnasium,1
+Gulpocheon,1
+Bupyeong-gu Office,1
+Amsa,1
+Cheonho,1
+Gangdong-gu Office,1
+Mongchontoseong,1
+Jamsil,1
+Seokchon,1
+Songpa,1
+Garak Market,1
+Munjeong,1
+Zhang Ziyi,1
+Bokjeong,1
+Sanseong,1
+Namhansanseong,1
+Dandae Ogeori,1
+Shinheung,1
+Sujin,1
+Moran,1
+Gaehwa,1
+Gimpo Airport,1
+Airport Market,1
+Sinbanghwa,1
+Magoknaru,1
+Yangcheonhyanggyo,1
+Gayang,1
+Jeungmi,1
+Deungchon,1
+Yeomchang,1
+Sinmok-dong,1
+Seonyudo,1
+Dangsan,1
+National Assembly Building,1
+Yeouido,1
+Saetgang,1
+Noryangjin,1
+Nodeul,1
+Heukseok,1
+Dongjak,1
+Gubanpo,1
+Sinbanpo,1
+Express Bus Terminal,1
+Sapyeong,1
+Sinnonhyeon,1
+Eonju,1
+Seonjeongneung,1
+Samseong Central,1
+Bongeunsa,1
+Sports Complex,1
+Samjeon,1
+Seokchon Ancient Tombs,1
+Seokchon,1
+Songpa Naru,1
+Hansung Baekje,1
+Olympic Park,1
+Dunchon Oryun,1
+Central Veterans Hospital,1
