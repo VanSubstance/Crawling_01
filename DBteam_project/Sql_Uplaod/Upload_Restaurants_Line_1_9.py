@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-station = ['Line_08']
+station = ['Line_07', 'Line_08']
 
 dir_excel = (os.path.dirname(os.getcwd()) + "\\Restaurant").replace("\\", "/")
 
@@ -31,7 +31,10 @@ for i in station:
                         temp[k] = '\&'
                 temp = ''.join(temp)
                 line[j] = temp
-        case.append("insert ignore into RESTAURANTS (STATION_NAME, RESTAURANT_NAME, REV_NUM, CTGR, URL) values (")
+                line[j] = line[j].replace(" station", "")
+                line[j] = line[j].replace(" Station", "")
+                line[j] = line[j].replace("\'", "\\\'")
+        case.append("insert ignore into RESTAURANTS (STATION_NAME, RESTAURANT_NAME, CTGR, REV_NUM, URL) values (")
         case.append("\'%s\'" % line[1])
         case.append(", \'%s\'" % line[2])
         case.append(", \'%s\'" % line[3])

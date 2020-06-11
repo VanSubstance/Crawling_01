@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-station = ['Line_08_01', 'Line_08_02', 'Line_08_03']
+station = ['Act', 'PC']
 
 dir_excel = (os.path.dirname(os.getcwd()) + "\\Activity").replace("\\", "/")
 
@@ -32,15 +32,16 @@ for i in station:
                 temp = ''.join(temp)
                 line[j] = temp
                 line[j] = line[j].replace("\'", "\\\'")
-        line[1] = line[1].replace(" station", "")
-        line[1] = line[1].replace(" Station", "")
-        case.append("insert ignore into ACTIVITIES (STATION_NAME, ACTIVITY_NAME, REV_NUM, CTGR, URL) values (")
-        case.append("\'%s\'" % line[1])
-        case.append(", \'%s\'" % line[2])
-        case.append(", \'%s\'" % line[3])
-        case.append(", \'%s\'" % line[4])
-        case.append(", \'%s\'" % line[5])
-        case.append(");\n")
+        if type(line[1]) is str:   
+            line[1] = line[1].replace(" station", "")
+            line[1] = line[1].replace(" Station", "")
+            case.append("insert ignore into ACTIVITIES (STATION_NAME, ACTIVITY_NAME, CTGR, REV_NUM, URL) values (")
+            case.append("\'%s\'" % line[1])
+            case.append(", \'%s\'" % line[2])
+            case.append(", \'%s\'" % line[3])
+            case.append(", \'%s\'" % line[4])
+            case.append(", \'%s\'" % line[5])
+            case.append(");\n")
         
         for i in case:
             T.write(i)
