@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-station = ['Act', 'PC']
+station = ['Act', 'PC', 'Sing']
 
 dir_excel = (os.path.dirname(os.getcwd()) + "\\Activity").replace("\\", "/")
 
@@ -32,6 +32,8 @@ for i in station:
                 temp = ''.join(temp)
                 line[j] = temp
                 line[j] = line[j].replace("\'", "\\\'")
+        if line[4] == '[]':
+            line[4] = 0
         if type(line[1]) is str:   
             line[1] = line[1].replace(" station", "")
             line[1] = line[1].replace(" Station", "")
