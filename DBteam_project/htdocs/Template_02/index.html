@@ -23,94 +23,18 @@
             font-family: 'Hanna';
             color: snow;
         }
+        button {
+            background-color: slategray;
+            font-family: 'Hanna';
+            color: snow;
+            border: 2px solid snow;
+        }
     </style>
     <?php
-    error_reporting(E_ALL);
-    ini_set("display_errors", 1);
-    $conn = mysqli_connect('localhost', 'root', '123456', 'mysql');
-
-    $stationArray = array();
+        include("database.php");
     ?>
-    <?php
-    $sql = "SELECT STATION_NAME as stationName FROM STATIONS";
-    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-    while ($row = mysqli_fetch_array($result)) {
-        array_push($stationArray, $row['stationName']);
-    }    
-    ?>
-    <script>
-        var stationOut = [];
-        var ctgrOut = [];
-        function attach(val) {
-            if (val.checked == true) {
-                if (val.name == 'station') {
-                    stationOut.push(val.value);
-                    stationOut.sort();
-                }
-                else {
-                    ctgrOut.push(val.value);
-                    ctgrOut.sort();
-                }
-            }
-            else {
-                if (val.name == 'station') {
-                    const i = stationOut.indexOf(val.value);
-                    if (i > -1) stationOut.splice(i , 1);
-                    stationOut.sort();
-                }
-                else {
-                    const i = ctgrOut.indexOf(val.value);
-                    if (i > -1) ctgrOut.splice(i , 1);
-                    ctgrOut.sort();
-                }
-            }
-            console.log(stationOut);
-            console.log(ctgrOut);
-        }
-        function showResult() {
-            for (var i = 0; i < stationOut.length; i++) {
-                station = stationOut[i];
-                for (var j = 0; j < ctgrOut.length; j++) {
-                    ctgr = ctgrOut[j];
-                    var body = document.getElementById("body");
-                    console.log(body);
-                    var result = document.createElement("div");
-                    result.innerHTML = " | " + station + " | " + ctgr + " | 에 대한 정보 리스트";
-                    result.setAttribute("id", "result");
-                    result.setAttribute("float", "left");
-                    console.log(result);
-                    body.appendChild(result);
-                }
-            }
-        }
-       /*
-       function showResult() {
-           var stationOutLength = $("input[name = 'station']").length;
-           stationOut = new Array(stationOutLength);
-           for (var i = 0; i < stationOutLength; i++) {
-               stationOut[i] = $("input[name = 'station']")[i].value;
-           }
-           var ctgrOutLength = $("input[name = 'ctgr']").length;
-           ctgrOut = new Array(ctgrOutLength);
-           for (var i = 0; i < ctgrOutLength; i++) {
-               ctgrOut[i] = $("input[name = 'ctgr']")[i].value;
-           }
-           for (var i = 0; i < stationOut.length; i++) {
-                station = stationOut[i];
-                for (var j = 0; j < ctgrOut.length; j++) {
-                    ctgr = ctgrOut[j];
-                    var body = document.getElementById("body");
-                    console.log(body);
-                    var result = document.createElement("div");
-                    result.innerHTML = " | " + station + " | " + ctgr + " | 에 대한 정보 리스트";
-                    result.setAttribute("id", "result");
-                    result.setAttribute("float", "left");
-                    console.log(result);
-                    body.appendChild(result);
-                }
-            }
-       }
-       */
+    <script type="text/javascript" src="checkbox_function.js">
+    //ctgrRest, ctgrAct, ctgrPlace > 각 카테고리 별 체크된 변수들이 들어있는 자바스크립트 어레이
     </script>
 </head>
 
@@ -138,22 +62,73 @@
         ">
             Category
         </p>
-        <li style="">
-            <input type="checkbox" name="ctgr" id="restaurantCheck" size=10 value="restaurant" onclick="attach(this)">
-            <label for="restaurantCheck" style="margin-left: 25px;">Restaurants</label>
+        <li style="
+        height: 200px;
+        ">
+            <div style="height: 50px;">
+                <input type="checkbox" name="ctgr" id="restaurantCheck" size=10 value="restaurant" onclick="checkUnder(this)">
+                <label style= "height: 50px;" for="restaurantCheck" style="margin-left: 25px;">Restaurants</label>
+            </div>
+            <ul>
+            <?php
+            foreach ($ctgrRest as $ctgrName) {
+                echo '<li style= "width: 180px; height: 30px; float: left;">';
+                echo '<input type= "checkbox" name= "ctgrRest" id= "'.$ctgrName;
+                echo 'Check" size= 20 value= "'.$ctgrName.'" onclick="attach(this)">';
+                echo '<label for= "'.$ctgrName.'Check" style="margin-left: 25px;">'.$ctgrName.'</label>';
+                echo '</li>';
+            }
+            ?>
+            </ul>
         </li>
         <br />
-        <li style="">
-            <input type="checkbox" name="ctgr" id="activityCheck" size=10 value="activity" onclick="attach(this)">
-            <label for="activityCheck" style="margin-left: 25px;">Activities</label>
+        <li style="
+        height: 200px;
+        ">
+            <div style="height: 50px;">
+                <input type="checkbox" name="ctgr" id="activityCheck" size=10 value="activity" onclick="checkUnder(this)">
+                <label style= "height: 50px;" for="activityCheck" style="margin-left: 25px;">Activities</label>
+            </div>
+            <ul>
+            <?php
+            foreach ($ctgrAct as $ctgrName) {
+                echo '<li style= "width: 180px; height: 30px; float: left;">';
+                echo '<input type= "checkbox" name= "ctgrAct" id= "'.$ctgrName;
+                echo 'Check" size= 20 value= "'.$ctgrName.'" onclick="attach(this)">';
+                echo '<label for= "'.$ctgrName.'Check" style="margin-left: 25px;">'.$ctgrName.'</label>';
+                echo '</li>';
+            }
+            ?>
+            </ul>
         </li>
         <br />
-        <li style="">
-            <input type="checkbox" name="ctgr" id="placeCheck" size=10 value="place" onclick="attach(this)">
-            <label for="placeCheck" style="margin-left: 25px;">Places</label>
+        <li style="
+        height: 200px;
+        ">
+            <div style="height: 50px;">
+                <input type="checkbox" name="ctgr" id="placeCheck" size=10 value="place" onclick="checkUnder(this)">
+                <label style= "height: 50px;" for="placeCheck" style="margin-left: 25px;">Places</label>
+            </div>
+            <ul>
+            <?php
+            foreach ($ctgrPlace as $ctgrName) {
+                echo '<li style= "width: 180px; height: 30px; float: left;">';
+                echo '<input type= "checkbox" name= "ctgrPlace" id= "'.$ctgrName;
+                echo 'Check" size= 20 value= "'.$ctgrName.'" onclick="attach(this)">';
+                echo '<label for= "'.$ctgrName.'Check" style="margin-left: 25px;">'.$ctgrName.'</label>';
+                echo '</li>';
+            }
+            ?>
+            </ul>
         </li>
         <br />
     </ul>
+    <button id="resultButton" onclick="" style="
+    float: right;
+    margin-right: 20px;
+    width: 100px;
+    height: 40px;
+    ">R E S U L T</button>
 
     </div>
 </body>
