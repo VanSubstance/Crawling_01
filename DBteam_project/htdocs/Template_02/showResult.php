@@ -38,9 +38,10 @@
         }
     }
     
-    //// resultSum을 내림차순으로 정렬 후, 상위 5개역만 남기고 버리기
+    //// resultSum을 내림차순으로 정렬 후, 상위 5개역만 남기고 버리기 + 평균 하나 더해주기
     arsort($resultSum);
+    $average = array_sum($resultSum) / sizeof($resultSum);
     $resultSum = array_slice($resultSum, 1, 5);
-
+    $resultSum['Average'] = $average;
     echo json_encode($resultSum);
 ?>

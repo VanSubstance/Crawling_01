@@ -148,7 +148,7 @@
     height: 1200px;
     float: left;
     ">
-        <p style="
+        <p  onclick="location.href='//222.106.121.250/Template_02/index.html'" style="
     font-size: 30px;
     font-weight: 300;
     margin-left: 10px;
@@ -290,21 +290,24 @@
                                         label: 'Number of stores',
                                         data: Object.values(data),
                                         backgroundColor: [
-                                            'rgba(255, 250, 250, 0.8)',
-                                            'rgba(255, 250, 250, 0.8)',
-                                            'rgba(255, 250, 250, 0.8)',
-                                            'rgba(255, 250, 250, 0.8)',
-                                            'rgba(255, 250, 250, 0.8)'
+                                            'rgba(255, 250, 250, 0.5)',
+                                            'rgba(255, 250, 250, 0.5)',
+                                            'rgba(255, 250, 250, 0.5)',
+                                            'rgba(255, 250, 250, 0.5)',
+                                            'rgba(255, 250, 250, 0.5)', 
+                                            'rgba(255, 99, 132, 0.5)'
                                         ],
                                         borderColor: [
-                                            'rgba(255, 250, 250, 0.8)',
-                                            'rgba(255, 250, 250, 0.8)',
-                                            'rgba(255, 250, 250, 0.8)',
-                                            'rgba(255, 250, 250, 0.8)',
-                                            'rgba(255, 250, 250, 0.8)'
+                                            'rgba(255, 250, 250, 1)',
+                                            'rgba(255, 250, 250, 1)',
+                                            'rgba(255, 250, 250, 1)',
+                                            'rgba(255, 250, 250, 1)',
+                                            'rgba(255, 250, 250, 1)', 
+                                            'rgba(255, 99, 132, 1)'
                                         ],
                                         borderWidth: 1
-                                    }]
+                                    }
+                                    ]
                                 },
                                 options: {
                                     maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
@@ -325,7 +328,7 @@
                             });
 
                             top5 = [];
-                            top5 = Object.keys(data).slice(0);
+                            top5 = Object.keys(data).slice(0, 5);
 
                             // Top5 역
                             var prev = document.getElementById("contextList");
@@ -341,7 +344,7 @@
                                 listInput.setAttribute("id", "top" + i);
                                 listInput.setAttribute("type", "button");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + top5[i]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -403,7 +406,7 @@
                                 listInput.setAttribute("id", "Act" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[0][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -424,7 +427,7 @@
                                 listInput.setAttribute("id", "Place" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[1][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -445,7 +448,7 @@
                                 listInput.setAttribute("id", "Rest" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[2][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -505,7 +508,7 @@
                                 listInput.setAttribute("id", "Act" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[0][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -526,7 +529,7 @@
                                 listInput.setAttribute("id", "Place" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[1][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -547,7 +550,7 @@
                                 listInput.setAttribute("id", "Rest" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[2][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -607,7 +610,7 @@
                                 listInput.setAttribute("id", "Act" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[0][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -628,7 +631,7 @@
                                 listInput.setAttribute("id", "Place" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[1][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -649,7 +652,7 @@
                                 listInput.setAttribute("id", "Rest" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[2][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -709,7 +712,7 @@
                                 listInput.setAttribute("id", "Act" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[0][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -730,7 +733,7 @@
                                 listInput.setAttribute("id", "Place" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[1][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -751,7 +754,7 @@
                                 listInput.setAttribute("id", "Rest" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[2][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -811,7 +814,7 @@
                                 listInput.setAttribute("id", "Act" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[0][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -832,7 +835,7 @@
                                 listInput.setAttribute("id", "Place" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[1][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -853,7 +856,7 @@
                                 listInput.setAttribute("id", "Rest" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[2][i][0]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
