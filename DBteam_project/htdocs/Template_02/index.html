@@ -6,35 +6,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template 02</title>
     <style>
-    @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+        @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
         ul {
             list-style: none;
         }
+
         main {
             background-color: slategray;
             border-right: lightslategray;
             border-right: 10px;
         }
+
         p {
             font-family: 'Hanna';
             color: snow;
         }
+
         li {
             font-family: 'Hanna';
             color: snow;
         }
-        button {
-            background-color: slategray;
-            font-family: 'Hanna';
-            color: snow;
-            border: 2px solid snow;
-        }
+
     </style>
     <?php
         include("database.php");
     ?>
-    <script type="text/javascript" src="checkbox_function.js">
-    //ctgrRest, ctgrAct, ctgrPlace > 각 카테고리 별 체크된 변수들이 들어있는 자바스크립트 어레이
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script>
+        var actOrigin = [];
+        var placeOrigin = [];
+        var restOrigin = [];
+        var ctgrRest = [];
+        var ctgrAct = [];
+        var ctgrPlace = [];
+        function attach(val) {
+            if (val.checked == true) {
+                if (val.name == "ctgrRest[]") {
+                    ctgrRest.push(val.value);
+                    ctgrRest.sort();
+                }
+                else if (val.name == "ctgrAct[]") {
+                    ctgrAct.push(val.value);
+                    ctgrAct.sort();
+                }
+                else {
+                    ctgrPlace.push(val.value);
+                    ctgrPlace.sort();
+                }
+            }
+            else {
+                if (val.name == "ctgrRest[]") {
+                    const i = ctgrRest.indexOf(val.value);
+                    if (i > -1) ctgrRest.splice(i, 1);
+                    ctgrRest.sort();
+                }
+                else if (val.name == "ctgrAct[]") {
+                    const i = ctgrAct.indexOf(val.value);
+                    if (i > -1) ctgrAct.splice(i, 1);
+                    ctgrAct.sort();
+                }
+                else {
+                    const i = ctgrPlace.indexOf(val.value);
+                    if (i > -1) ctgrPlace.splice(i, 1);
+                    ctgrPlace.sort();
+                }
+            }
+            console.log(ctgrRest);
+            console.log(ctgrAct);
+            console.log(ctgrPlace);
+        }
+        //checkUnder: parameter > name 이 ctgr 인 체크박스
+        //Function: name이 ctgr인 체크박스를 체크 / 체크해제하면 하위 체크박스들도 체크 / 체크 해제된다.
+        function checkUnder(val) {
+            switch (val.id) {
+                case "restaurantCheck":
+                    var under = document.getElementsByName("ctgrRest[]");
+                    under.forEach(element => {
+                        element.checked = val.checked;
+                        attach(element);
+                    });
+                    break;
+                case "activityCheck":
+                    var under = document.getElementsByName("ctgrAct[]");
+                    under.forEach(element => {
+                        element.checked = val.checked;
+                        attach(element);
+                    });
+                    break;
+                case "placeCheck":
+                    var under = document.getElementsByName("ctgrPlace[]");
+                    under.forEach(element => {
+                        element.checked = val.checked;
+                        attach(element);
+                    });
+                    break;
+                default:
+                    alert("Error");
+                    break;
+            }
+        }
+
+        //checkUpper: parameter > name 이 ctgrRest / ctgrAct / ctgrPlace 인 체크박스
+        //Function: name 이 ctgrRest / ctgrAct / ctgrPlace 인 체크박스들을 체크 / 체크해제하면 상위 체크박스도 체크 / 체크 해제된다.
+        function checkUpper(val) {
+            attach(val);
+            switch (val.name) {
+                case "ctgrRest[]":
+                    var upper = document.getElementById("restaurantCheck");
+                    upper.checked = val.checked;
+                    break;
+                case "ctgrAct[]":
+                    var upper = document.getElementById("activityCheck");
+                    upper.checked = val.checked;
+                    break;
+                case "ctgrPlace[]":
+                    var upper = document.getElementById("placeCheck");
+                    upper.checked = val.checked;
+                    break;
+                default:
+                    alert("Error");
+                    break;
+            }
+
+        }
+
+    </script>
+    <script>
+        // Top 5 역 보관할 어레이
+        var top5 = [];
     </script>
 </head>
 
@@ -47,149 +148,844 @@
     height: 1200px;
     float: left;
     ">
-    <p style="
+        <p style="
     font-size: 30px;
     font-weight: 300;
     margin-left: 10px;
-    ">Template Test 01</p>
-    <ul style="
+    ">TEAM 04</p>
+        <form>
+            <ul style="
     width: 100%;
     padding-left: 0px;
     ">
-        <p style="
+                <p style="
         font-size: 20px;
         text-align: center;
         ">
-            Category
-        </p>
-        <li style="
+                    CATEGORY
+                </p>
+                <li style="
         height: 200px;
         ">
-            <div style="height: 50px;">
-                <input type="checkbox" name="ctgr" id="restaurantCheck" size=10 value="restaurant" onclick="checkUnder(this)">
-                <label style= "height: 50px;" for="restaurantCheck" style="margin-left: 25px;">Restaurants</label>
-            </div>
-            <ul>
-            <?php
+                    <div style="height: 50px;">
+                        <input type="checkbox" name="ctgr[]" id="restaurantCheck" size=10 value="restaurant"
+                            onclick="checkUnder(this)">
+                        <label style="height: 50px;" for="restaurantCheck"
+                            style="margin-left: 25px;">Restaurants</label>
+                    </div>
+                    <ul>
+                        <?php
             foreach ($ctgrRest as $ctgrName) {
                 echo '<li style= "width: 180px; height: 30px; float: left;">';
-                echo '<input type= "checkbox" name= "ctgrRest" id= "'.$ctgrName;
-                echo 'Check" size= 20 value= "'.$ctgrName.'" onclick="attach(this)">';
+                echo '<input type= "checkbox" name= "ctgrRest[]" id= "'.$ctgrName;
+                echo 'Check" size= 20 value= "'.$ctgrName.'" onclick="checkUpper(this)">';
                 echo '<label for= "'.$ctgrName.'Check" style="margin-left: 25px;">'.$ctgrName.'</label>';
                 echo '</li>';
             }
             ?>
-            </ul>
-        </li>
-        <br />
-        <li style="
+                    </ul>
+                </li>
+                <br />
+                <li style="
         height: 200px;
         ">
-            <div style="height: 50px;">
-                <input type="checkbox" name="ctgr" id="activityCheck" size=10 value="activity" onclick="checkUnder(this)">
-                <label style= "height: 50px;" for="activityCheck" style="margin-left: 25px;">Activities</label>
-            </div>
-            <ul>
-            <?php
+                    <div style="height: 50px;">
+                        <input type="checkbox" name="ctgr[]" id="activityCheck" size=10 value="activity"
+                            onclick="checkUnder(this)">
+                        <label style="height: 50px;" for="activityCheck" style="margin-left: 25px;">Activities</label>
+                    </div>
+                    <ul>
+                        <?php
             foreach ($ctgrAct as $ctgrName) {
                 echo '<li style= "width: 180px; height: 30px; float: left;">';
-                echo '<input type= "checkbox" name= "ctgrAct" id= "'.$ctgrName;
-                echo 'Check" size= 20 value= "'.$ctgrName.'" onclick="attach(this)">';
+                echo '<input type= "checkbox" name= "ctgrAct[]" id= "'.$ctgrName;
+                echo 'Check" size= 20 value= "'.$ctgrName.'" onclick="checkUpper(this)">';
                 echo '<label for= "'.$ctgrName.'Check" style="margin-left: 25px;">'.$ctgrName.'</label>';
                 echo '</li>';
             }
             ?>
-            </ul>
-        </li>
-        <br />
-        <li style="
+                    </ul>
+                </li>
+                <br />
+                <li style="
         height: 200px;
         ">
-            <div style="height: 50px;">
-                <input type="checkbox" name="ctgr" id="placeCheck" size=10 value="place" onclick="checkUnder(this)">
-                <label style= "height: 50px;" for="placeCheck" style="margin-left: 25px;">Places</label>
-            </div>
-            <ul>
-            <?php
+                    <div style="height: 50px;">
+                        <input type="checkbox" name="ctgr[]" id="placeCheck" size=10 value="place"
+                            onclick="checkUnder(this)">
+                        <label style="height: 50px;" for="placeCheck" style="margin-left: 25px;">Places</label>
+                    </div>
+                    <ul>
+                        <?php
             foreach ($ctgrPlace as $ctgrName) {
                 echo '<li style= "width: 180px; height: 30px; float: left;">';
-                echo '<input type= "checkbox" name= "ctgrPlace" id= "'.$ctgrName;
-                echo 'Check" size= 20 value= "'.$ctgrName.'" onclick="attach(this)">';
+                echo '<input type= "checkbox" name= "ctgrPlace[]" id= "'.$ctgrName;
+                echo 'Check" size= 20 value= "'.$ctgrName.'" onclick="checkUpper(this)">';
                 echo '<label for= "'.$ctgrName.'Check" style="margin-left: 25px;">'.$ctgrName.'</label>';
                 echo '</li>';
             }
             ?>
+                    </ul>
+                </li>
+                <br />
             </ul>
-        </li>
-        <br />
-    </ul>
-    <button id="resultButton" onclick="" style="
+        </form>
+        <input type="button" id="Result" value="R E S U L T" style="
     float: right;
     margin-right: 20px;
-    margin-top: 150px;
-    width: 100px;
+    margin-top: 70px;
+    width: 120px;
     height: 40px;
-    ">R E S U L T</button>
+    background-color: rgb(15, 52, 88);
+    font-family: 'Hanna';
+    color: snow;
+    border: 2px solid snow;
+    ">
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script>
+            $(function () {
 
+                $('#Result').on('click', function (event) {
+                    actOrigin = ctgrAct.slice(0);
+                    placeOrigin = ctgrPlace.slice(0);
+                    restOrigin = ctgrRest.slice(0);
+                    for (var i = 0; i < actOrigin.length; i++) {
+                        actOrigin[i] = '\'' + actOrigin[i] + '\'';
+                    }
+                    for (var i = 0; i < placeOrigin.length; i++) {
+                        placeOrigin[i] = '\'' + placeOrigin[i] + '\'';
+                    }
+                    for (var i = 0; i < restOrigin.length; i++) {
+                        restOrigin[i] = '\'' + restOrigin[i] + '\'';
+                    }
+                    actOrigin = actOrigin.join(', ');
+                    placeOrigin = placeOrigin.join(', ');
+                    restOrigin = restOrigin.join(', ');
+
+                    $.ajax({
+                        url: 'http://222.106.121.250/Template_02/showResult.php',
+                        type: 'POST',
+                        traditional: true,
+                        dataType: 'json',
+                        data: {
+                            "ctgrRest": restOrigin,
+                            "ctgrAct": actOrigin,
+                            "ctgrPlace": placeOrigin
+                        },
+                        success: function (data) {
+                            // 막대그래프
+                            var prev = document.getElementById("barGraph");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+                            var newone = document.createElement("canvas");
+                            newone.setAttribute("id", "barGraph");
+                            newone.setAttribute("style", "align-content: center; width: 500px; height: 440px");
+                            parent.appendChild(newone);
+                            var ex01 = document.getElementById("barGraph").getContext('2d');
+                            var chart01 = new Chart(ex01, {
+                                type: 'bar',
+                                data: {
+                                    labels: Object.keys(data),
+                                    datasets: [{
+                                        label: 'Number of stores',
+                                        data: Object.values(data),
+                                        backgroundColor: [
+                                            'rgba(255, 250, 250, 0.8)',
+                                            'rgba(255, 250, 250, 0.8)',
+                                            'rgba(255, 250, 250, 0.8)',
+                                            'rgba(255, 250, 250, 0.8)',
+                                            'rgba(255, 250, 250, 0.8)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(255, 250, 250, 0.8)',
+                                            'rgba(255, 250, 250, 0.8)',
+                                            'rgba(255, 250, 250, 0.8)',
+                                            'rgba(255, 250, 250, 0.8)',
+                                            'rgba(255, 250, 250, 0.8)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    maintainAspectRatio: true, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+                                    scales: {
+                                        xAxes: [{
+                                            ticks: {
+                                                fontColor: 'rgb(255, 250, 250)'
+                                            }
+                                        }],
+                                        yAxes: [{
+                                            ticks: {
+                                                fontColor: 'rgb(255, 250, 250)',
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+
+                            top5 = [];
+                            top5 = Object.keys(data).slice(0);
+
+                            // Top5 역
+                            var prev = document.getElementById("contextList");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "contextList");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < 5; i++) {
+                                var listInput = document.createElement("input");
+                                listInput.setAttribute("id", "top" + i);
+                                listInput.setAttribute("type", "button");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + top5[i]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            restOrigin = [];
+                            actOrigin = [];
+                            placeOrigin = [];
+                        },
+                        error: function (request, status, error) {
+                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+                        }
+
+                    })
+                });
+                // 역, 카테고리별 Top 5: 총 15개
+                $(document).on('click', "#top0", function () {
+                    actOrigin = ctgrAct.slice(0);
+                    placeOrigin = ctgrPlace.slice(0);
+                    restOrigin = ctgrRest.slice(0);
+                    var station = '\'' + top5[0] + '\'';
+                    for (var i = 0; i < actOrigin.length; i++) {
+                        actOrigin[i] = '\'' + actOrigin[i] + '\'';
+                    }
+                    for (var i = 0; i < placeOrigin.length; i++) {
+                        placeOrigin[i] = '\'' + placeOrigin[i] + '\'';
+                    }
+                    for (var i = 0; i < restOrigin.length; i++) {
+                        restOrigin[i] = '\'' + restOrigin[i] + '\'';
+                    }
+                    actOrigin = actOrigin.join(', ');
+                    placeOrigin = placeOrigin.join(', ');
+                    restOrigin = restOrigin.join(', ');
+
+                    $.ajax({
+                        url: 'http://222.106.121.250/Template_02/top5_button.php',
+                        type: 'POST',
+                        traditional: true,
+                        dataType: 'json',
+                        data: {
+                            "ctgrRest": restOrigin,
+                            "ctgrAct": actOrigin,
+                            "ctgrPlace": placeOrigin,
+                            "station": station
+                        },
+                        success: function (data) {
+                            // 1. Activities
+                            var prev = document.getElementById("top5Act");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Act");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[0].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Act" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[0][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            // 2. Places
+                            var prev = document.getElementById("top5Place");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Place");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[1].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Place" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[1][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            // 3. Restaurants
+                            var prev = document.getElementById("top5Rest");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Rest");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[2].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Rest" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[2][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            restOrigin = [];
+                            actOrigin = [];
+                            placeOrigin = [];
+                        },
+                        error: function (request, status, error) {
+                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+                        }
+                    })
+                });
+                $(document).on('click', "#top1", function () {
+                    actOrigin = ctgrAct.slice(0);
+                    placeOrigin = ctgrPlace.slice(0);
+                    restOrigin = ctgrRest.slice(0);
+                    var station = '\'' + top5[1] + '\'';
+                    for (var i = 0; i < actOrigin.length; i++) {
+                        actOrigin[i] = '\'' + actOrigin[i] + '\'';
+                    }
+                    for (var i = 0; i < placeOrigin.length; i++) {
+                        placeOrigin[i] = '\'' + placeOrigin[i] + '\'';
+                    }
+                    for (var i = 0; i < restOrigin.length; i++) {
+                        restOrigin[i] = '\'' + restOrigin[i] + '\'';
+                    }
+                    actOrigin = actOrigin.join(', ');
+                    placeOrigin = placeOrigin.join(', ');
+                    restOrigin = restOrigin.join(', ');
+
+                    $.ajax({
+                        url: 'http://222.106.121.250/Template_02/top5_button.php',
+                        type: 'POST',
+                        traditional: true,
+                        dataType: 'json',
+                        data: {
+                            "ctgrRest": restOrigin,
+                            "ctgrAct": actOrigin,
+                            "ctgrPlace": placeOrigin,
+                            "station": station
+                        },
+                        success: function (data) {
+                            // 1. Activities
+                            var prev = document.getElementById("top5Act");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Act");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[0].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Act" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[0][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            // 2. Places
+                            var prev = document.getElementById("top5Place");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Place");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[1].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Place" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[1][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            // 3. Restaurants
+                            var prev = document.getElementById("top5Rest");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Rest");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[2].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Rest" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[2][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            restOrigin = [];
+                            actOrigin = [];
+                            placeOrigin = [];
+                        },
+                        error: function (request, status, error) {
+                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+                        }
+                    })
+                });
+                $(document).on('click', "#top2", function () {
+                    actOrigin = ctgrAct.slice(0);
+                    placeOrigin = ctgrPlace.slice(0);
+                    restOrigin = ctgrRest.slice(0);
+                    var station = '\'' + top5[2] + '\'';
+                    for (var i = 0; i < actOrigin.length; i++) {
+                        actOrigin[i] = '\'' + actOrigin[i] + '\'';
+                    }
+                    for (var i = 0; i < placeOrigin.length; i++) {
+                        placeOrigin[i] = '\'' + placeOrigin[i] + '\'';
+                    }
+                    for (var i = 0; i < restOrigin.length; i++) {
+                        restOrigin[i] = '\'' + restOrigin[i] + '\'';
+                    }
+                    actOrigin = actOrigin.join(', ');
+                    placeOrigin = placeOrigin.join(', ');
+                    restOrigin = restOrigin.join(', ');
+
+                    $.ajax({
+                        url: 'http://222.106.121.250/Template_02/top5_button.php',
+                        type: 'POST',
+                        traditional: true,
+                        dataType: 'json',
+                        data: {
+                            "ctgrRest": restOrigin,
+                            "ctgrAct": actOrigin,
+                            "ctgrPlace": placeOrigin,
+                            "station": station
+                        },
+                        success: function (data) {
+                            // 1. Activities
+                            var prev = document.getElementById("top5Act");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Act");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[0].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Act" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[0][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            // 2. Places
+                            var prev = document.getElementById("top5Place");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Place");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[1].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Place" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[1][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            // 3. Restaurants
+                            var prev = document.getElementById("top5Rest");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Rest");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[2].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Rest" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[2][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            restOrigin = [];
+                            actOrigin = [];
+                            placeOrigin = [];
+                        },
+                        error: function (request, status, error) {
+                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+                        }
+                    })
+                });
+                $(document).on('click', "#top3", function () {
+                    actOrigin = ctgrAct.slice(0);
+                    placeOrigin = ctgrPlace.slice(0);
+                    restOrigin = ctgrRest.slice(0);
+                    var station = '\'' + top5[3] + '\'';
+                    for (var i = 0; i < actOrigin.length; i++) {
+                        actOrigin[i] = '\'' + actOrigin[i] + '\'';
+                    }
+                    for (var i = 0; i < placeOrigin.length; i++) {
+                        placeOrigin[i] = '\'' + placeOrigin[i] + '\'';
+                    }
+                    for (var i = 0; i < restOrigin.length; i++) {
+                        restOrigin[i] = '\'' + restOrigin[i] + '\'';
+                    }
+                    actOrigin = actOrigin.join(', ');
+                    placeOrigin = placeOrigin.join(', ');
+                    restOrigin = restOrigin.join(', ');
+
+                    $.ajax({
+                        url: 'http://222.106.121.250/Template_02/top5_button.php',
+                        type: 'POST',
+                        traditional: true,
+                        dataType: 'json',
+                        data: {
+                            "ctgrRest": restOrigin,
+                            "ctgrAct": actOrigin,
+                            "ctgrPlace": placeOrigin,
+                            "station": station
+                        },
+                        success: function (data) {
+                            // 1. Activities
+                            var prev = document.getElementById("top5Act");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Act");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[0].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Act" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[0][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            // 2. Places
+                            var prev = document.getElementById("top5Place");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Place");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[1].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Place" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[1][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            // 3. Restaurants
+                            var prev = document.getElementById("top5Rest");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Rest");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[2].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Rest" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[2][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            restOrigin = [];
+                            actOrigin = [];
+                            placeOrigin = [];
+                        },
+                        error: function (request, status, error) {
+                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+                        }
+                    })
+                });
+                $(document).on('click', "#top4", function () {
+                    actOrigin = ctgrAct.slice(0);
+                    placeOrigin = ctgrPlace.slice(0);
+                    restOrigin = ctgrRest.slice(0);
+                    var station = '\'' + top5[4] + '\'';
+                    for (var i = 0; i < actOrigin.length; i++) {
+                        actOrigin[i] = '\'' + actOrigin[i] + '\'';
+                    }
+                    for (var i = 0; i < placeOrigin.length; i++) {
+                        placeOrigin[i] = '\'' + placeOrigin[i] + '\'';
+                    }
+                    for (var i = 0; i < restOrigin.length; i++) {
+                        restOrigin[i] = '\'' + restOrigin[i] + '\'';
+                    }
+                    actOrigin = actOrigin.join(', ');
+                    placeOrigin = placeOrigin.join(', ');
+                    restOrigin = restOrigin.join(', ');
+
+                    $.ajax({
+                        url: 'http://222.106.121.250/Template_02/top5_button.php',
+                        type: 'POST',
+                        traditional: true,
+                        dataType: 'json',
+                        data: {
+                            "ctgrRest": restOrigin,
+                            "ctgrAct": actOrigin,
+                            "ctgrPlace": placeOrigin,
+                            "station": station
+                        },
+                        success: function (data) {
+                            // 1. Activities
+                            var prev = document.getElementById("top5Act");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Act");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[0].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Act" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[0][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            // 2. Places
+                            var prev = document.getElementById("top5Place");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Place");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[1].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Place" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[1][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            // 3. Restaurants
+                            var prev = document.getElementById("top5Rest");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("div");
+                            newone.setAttribute("id", "top5Rest");
+                            newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            for (var i = 0; i < data[2].length; i++) {
+                                var listInput = document.createElement("button");
+                                listInput.setAttribute("id", "Rest" + i);
+                                listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
+                                listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + data[2][i][0]);
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 260px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.innerHTML = listInput.value;
+                                newone.appendChild(listInput);
+                            }
+
+                            parent.appendChild(newone);
+
+                            restOrigin = [];
+                            actOrigin = [];
+                            placeOrigin = [];
+                        },
+                        error: function (request, status, error) {
+                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+                        }
+                    })
+                });
+            })
+        </script>
     </div>
+
     <div style="
     background-color: rgb(46, 46, 59);
-    border-right: 2px solid;
-    border-right-color: rgb(172, 172, 172);
-    width: 1600px;
+    width: 600px;
     height: 1200px;
     float: right;
     ">
         <div style="
-        width: 600px;
-        height: 400px;
+        width: 500px;
+        height: 500px;
         border: 2px solid;
         border-color: rgb(172, 172, 172);
-        margin-left: 100px;
+        margin-left: 48px;
         margin-top: 50px;
         position: absolute;
         ">
-        <p style="text-align: center;">역 언급량 그래프 예시</p>
-        <img src="image/ex01.png" width="100%" style="align-content: center;"/>
+            <p style="text-align: center;">Station ~ Number of stores</p>
+            <canvas id="barGraph" width="100%" style="align-content: center;">
+                막대 그래프
+            </canvas>
         </div>
 
         <div style="
-        width: 600px;
-        height: 400px;
+        width: 500px;
+        height: 500px;
         border: 2px solid;
         border-color: rgb(172, 172, 172);
-        margin-left: 100px;
-        margin-top: 600px;
+        margin-left: 48px;
+        margin-top: 646px;
         position: absolute;
         ">
-        <p style="text-align: center;">빅데이터 키워드 모음 예시</p>
-        <img src="image/ex02.png" width="100%" style="align-content: center;"/>
+            <p style="text-align: center;">역별 언급량 그래프 예시</p>
+            <canvas id="graph_02" width="100%" height="480px" style="align-content: center;">
+                선 그래프
+            </canvas>
         </div>
 
+    </div>
+
+    <div style="
+    background-color: rgb(52, 52, 65);
+    width: 1200px;
+    height: 1200px;
+    float: right;
+    margin-right: 100px;
+    ">
         <div style="
-        width: 600px;
-        height: 400px;
+        width: 400px;
+        height: 500px;
         border: 2px solid;
         border-color: rgb(172, 172, 172);
-        margin-left: 900px;
+        margin-left: 48px;
         margin-top: 50px;
         position: absolute;
         ">
-        <p style="text-align: center;">카테고리별 best5 예시</p>
-        <img src="image/ex03.png" width="100%" style="align-content: center;"/>
+            <p style="text-align: center;">Top 5 Stations</p>
+            <div id="contextList" width="100%" style="align-content: center;">
+            </div>
         </div>
 
         <div style="
         width: 600px;
-        height: 400px;
+        height: 500px;
         border: 2px solid;
         border-color: rgb(172, 172, 172);
-        margin-left: 900px;
-        margin-top: 600px;
+        margin-left: 548px;
+        margin-top: 50px;
         position: absolute;
         ">
-        <p style="text-align: center;">역 별 가게수 best5 예시</p>
-        <img src="image/ex04.png" width="100%" style="align-content: center;"/>
+            <p style="text-align: center;">Word cloud</p>
+            <canvas id="wordCloud" width="100%" style="align-content: center;">
+            </canvas>
+        </div>
+
+        <div style="
+        width: 300px;
+        height: 500px;
+        border: 2px solid;
+        border-color: rgb(172, 172, 172);
+        margin-left: 48px;
+        margin-top: 646px;
+        position: absolute;
+        ">
+            <p style="text-align: center;">Top 5 Restaurants</p>
+            <div id="top5Rest" width="100%" style="align-content: center;">
+            </div>
+        </div>
+
+        <div style="
+        width: 300px;
+        height: 500px;
+        border: 2px solid;
+        border-color: rgb(172, 172, 172);
+        margin-left: 450px;
+        margin-top: 646px;
+        position: absolute;
+        ">
+            <p style="text-align: center;">Top 5 Activities</p>
+            <div id="top5Act" width="100%" style="align-content: center;">
+            </div>
+        </div>
+
+        <div style="
+        width: 300px;
+        height: 500px;
+        border: 2px solid;
+        border-color: rgb(172, 172, 172);
+        margin-left: 852px;
+        margin-top: 646px;
+        position: absolute;
+        ">
+            <p style="text-align: center;">Top 5 Places</p>
+            <div id="top5Place" width="100%" style="align-content: center;">
+            </div>
         </div>
 
     </div>

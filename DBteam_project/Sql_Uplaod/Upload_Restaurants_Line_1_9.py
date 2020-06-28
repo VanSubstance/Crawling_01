@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-station = ['Data_03', 'Data_04']
+station = ['Data_07']
 
 dir_excel = (os.path.dirname(os.getcwd()) + "\\Restaurant").replace("\\", "/")
 

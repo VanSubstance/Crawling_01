@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function c(val) {
+            console.log(val.id);
+            var b = document.getElementsByName("a[]");
+            b.forEach(element => {
+                element.checked = val.checked;
+            });
+        }
+        function d() {
+            var b = document.getElementsByName("a[]");
+            console.log(b.values);
+        }
+    </script>
+</head>
+
+<body>
+    <form name="K" method="POST" action="test_03.php">
+    <input type="checkbox" id="aaa" onclick="c(this)">가능ㅁㄴㅇ
+    <input type="checkbox" name="a[]" value="1" onclick="d()">1<br />
+    <input type="checkbox" name="a[]" value="2" onclick="d()">1<br />
+    <input type="checkbox" name="a[]" value="3" onclick="d()">1<br />
+    <input type="checkbox" name="a[]" value="4" onclick="d()">1<br />
+    <input type="checkbox" name="a[]" value="5" onclick="d()">1<br />
+    <input type="checkbox" name="a[]" value="6" onclick="d()">1<br />
+    <input type="checkbox" name="a[]" value="7" onclick="d()">1<br />
+    </form>
+</body>
+
+</html>

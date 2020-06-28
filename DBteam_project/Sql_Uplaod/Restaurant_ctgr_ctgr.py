@@ -2,7 +2,7 @@
 
 import os
 
-transform = ['양식', '일식', '한식', '카페, 디저트', '주점', '분식, 패스트푸드', '중식, 동양식']
+transform = ['Western', 'Japanese', 'Korean', 'Cafe,Dessert', 'Bar', 'Fastfood', 'Chinese']
 
 station = ['restaurants']
 

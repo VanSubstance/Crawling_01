@@ -2,7 +2,7 @@
 
 import os
 
-transform = ['PC방', '노래방', '테마카페', 'VR, 오락실', '구기종목, 야외']
+transform = ['PC', 'Karaoke', 'ThemeCafe', 'VR,Game', 'Outdoor']
 
 station = ['activities']
 

@@ -2,7 +2,7 @@
 
 import os
 
-transform = ['문화유산', '레저, 테마', '기념, 전시, 미술관', '공원, 문화 명소']
+transform = ['Historical', 'Leisure', 'Exihibition', 'Park']
 
 station = ['places']
 
