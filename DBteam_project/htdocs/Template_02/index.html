@@ -323,6 +323,11 @@
                                                 beginAtZero: true
                                             }
                                         }]
+                                    },
+                                    legend: {
+                                        labels: {
+                                            fontColor: 'rgb(255, 250, 250)'
+                                        }
                                     }
                                 }
                             });
@@ -338,6 +343,8 @@
                             var newone = document.createElement("div");
                             newone.setAttribute("id", "contextList");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
+
+                            var dataLen = 5;
 
                             for (var i = 0; i < 5; i++) {
                                 var listInput = document.createElement("input");
@@ -392,6 +399,11 @@
                             "station": station
                         },
                         success: function (data) {
+
+                            // Change Current Station name
+                            var stationName = document.getElementById("currentStation");
+                            stationName.innerHTML = top5[0] + " Station";
+
                             // 1. Activities
                             var prev = document.getElementById("top5Act");
                             var parent = prev.parentElement;
@@ -401,7 +413,12 @@
                             newone.setAttribute("id", "top5Act");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[0].length; i++) {
+                            var dataLen = 5;
+                            if (data[0].length < 5) {
+                                dataLen = data[0].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Act" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
@@ -422,7 +439,12 @@
                             newone.setAttribute("id", "top5Place");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[1].length; i++) {
+                            var dataLen = 5;
+                            if (data[1].length < 5) {
+                                dataLen = data[1].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Place" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
@@ -443,7 +465,12 @@
                             newone.setAttribute("id", "top5Rest");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[2].length; i++) {
+                            var dataLen = 5;
+                            if (data[2].length < 5) {
+                                dataLen = data[2].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Rest" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
@@ -455,9 +482,56 @@
 
                             parent.appendChild(newone);
 
+                            // Reset containers
                             restOrigin = [];
                             actOrigin = [];
                             placeOrigin = [];
+
+                            // 4. Pie chart
+                            var countCategories = [];
+                            for (var i = 0; i < data.length; i++) {
+                                countCategories[i] = data[i].length;
+                            }
+                            var prev = document.getElementById("pieGraph");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("canvas");
+                            newone.setAttribute("id", "pieGraph");
+                            newone.setAttribute("style", "align-content: center; width: 220px; height: 388px; position: absolute; margin-left: 40px; margin-top: 52px;");
+                            parent.appendChild(newone);
+
+                            var ex01 = document.getElementById("pieGraph").getContext('2d');
+                            var chart01 = new Chart(ex01, {
+                                type: 'pie',
+                                data: {
+                                    labels: ['Activities', 'Places', 'Restaurants'],
+                                    datasets: [{
+                                        data: countCategories,
+                                        backgroundColor: [
+                                            'rgba(135, 204, 193, 0.5)',
+                                            'rgba(221, 142, 188, 0.5)',
+                                            'rgba(228, 216, 150, 0.5)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(135, 204, 193, 1)',
+                                            'rgba(221, 142, 188, 1)',
+                                            'rgba(228, 216, 150, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }
+                                    ]
+                                },
+                                options: {
+                                    responsive: false, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+                                    legend: {
+                                        labels: {
+                                            fontColor: 'rgb(255, 250, 250)'
+                                        }
+                                    }
+                                }
+                            });
+
                         },
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
@@ -494,6 +568,11 @@
                             "station": station
                         },
                         success: function (data) {
+
+                            // Change Current Station name
+                            var stationName = document.getElementById("currentStation");
+                            stationName.innerHTML = top5[1] + " Station";
+
                             // 1. Activities
                             var prev = document.getElementById("top5Act");
                             var parent = prev.parentElement;
@@ -503,7 +582,12 @@
                             newone.setAttribute("id", "top5Act");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[0].length; i++) {
+                            var dataLen = 5;
+                            if (data[0].length < 5) {
+                                dataLen = data[0].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Act" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
@@ -524,7 +608,12 @@
                             newone.setAttribute("id", "top5Place");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[1].length; i++) {
+                            var dataLen = 5;
+                            if (data[1].length < 5) {
+                                dataLen = data[1].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Place" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
@@ -545,7 +634,12 @@
                             newone.setAttribute("id", "top5Rest");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[2].length; i++) {
+                            var dataLen = 5;
+                            if (data[2].length < 5) {
+                                dataLen = data[2].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Rest" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
@@ -557,9 +651,55 @@
 
                             parent.appendChild(newone);
 
+                            // Reset containers
                             restOrigin = [];
                             actOrigin = [];
                             placeOrigin = [];
+
+                            // 4. Pie chart
+                            var countCategories = [];
+                            for (var i = 0; i < data.length; i++) {
+                                countCategories[i] = data[i].length;
+                            }
+                            var prev = document.getElementById("pieGraph");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("canvas");
+                            newone.setAttribute("id", "pieGraph");
+                            newone.setAttribute("style", "align-content: center; width: 220px; height: 388px; position: absolute; margin-left: 40px; margin-top: 52px;");
+                            parent.appendChild(newone);
+
+                            var ex01 = document.getElementById("pieGraph").getContext('2d');
+                            var chart01 = new Chart(ex01, {
+                                type: 'pie',
+                                data: {
+                                    labels: ['Activities', 'Places', 'Restaurants'],
+                                    datasets: [{
+                                        data: countCategories,
+                                        backgroundColor: [
+                                            'rgba(135, 204, 193, 0.5)',
+                                            'rgba(221, 142, 188, 0.5)',
+                                            'rgba(228, 216, 150, 0.5)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(135, 204, 193, 1)',
+                                            'rgba(221, 142, 188, 1)',
+                                            'rgba(228, 216, 150, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }
+                                    ]
+                                },
+                                options: {
+                                    responsive: false, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+                                    legend: {
+                                        labels: {
+                                            fontColor: 'rgb(255, 250, 250)'
+                                        }
+                                    }
+                                }
+                            });
                         },
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
@@ -596,6 +736,11 @@
                             "station": station
                         },
                         success: function (data) {
+
+                            // Change Current Station name
+                            var stationName = document.getElementById("currentStation");
+                            stationName.innerHTML = top5[2] + " Station";
+
                             // 1. Activities
                             var prev = document.getElementById("top5Act");
                             var parent = prev.parentElement;
@@ -605,7 +750,12 @@
                             newone.setAttribute("id", "top5Act");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[0].length; i++) {
+                            var dataLen = 5;
+                            if (data[0].length < 5) {
+                                dataLen = data[0].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Act" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
@@ -626,7 +776,12 @@
                             newone.setAttribute("id", "top5Place");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[1].length; i++) {
+                            var dataLen = 5;
+                            if (data[1].length < 5) {
+                                dataLen = data[1].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Place" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
@@ -647,7 +802,12 @@
                             newone.setAttribute("id", "top5Rest");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[2].length; i++) {
+                            var dataLen = 5;
+                            if (data[2].length < 5) {
+                                dataLen = data[2].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Rest" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
@@ -659,9 +819,55 @@
 
                             parent.appendChild(newone);
 
+                            // Reset containers
                             restOrigin = [];
                             actOrigin = [];
                             placeOrigin = [];
+
+                            // 4. Pie chart
+                            var countCategories = [];
+                            for (var i = 0; i < data.length; i++) {
+                                countCategories[i] = data[i].length;
+                            }
+                            var prev = document.getElementById("pieGraph");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("canvas");
+                            newone.setAttribute("id", "pieGraph");
+                            newone.setAttribute("style", "align-content: center; width: 220px; height: 388px; position: absolute; margin-left: 40px; margin-top: 52px;");
+                            parent.appendChild(newone);
+
+                            var ex01 = document.getElementById("pieGraph").getContext('2d');
+                            var chart01 = new Chart(ex01, {
+                                type: 'pie',
+                                data: {
+                                    labels: ['Activities', 'Places', 'Restaurants'],
+                                    datasets: [{
+                                        data: countCategories,
+                                        backgroundColor: [
+                                            'rgba(135, 204, 193, 0.5)',
+                                            'rgba(221, 142, 188, 0.5)',
+                                            'rgba(228, 216, 150, 0.5)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(135, 204, 193, 1)',
+                                            'rgba(221, 142, 188, 1)',
+                                            'rgba(228, 216, 150, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }
+                                    ]
+                                },
+                                options: {
+                                    responsive: false, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+                                    legend: {
+                                        labels: {
+                                            fontColor: 'rgb(255, 250, 250)'
+                                        }
+                                    }
+                                }
+                            });
                         },
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
@@ -698,6 +904,11 @@
                             "station": station
                         },
                         success: function (data) {
+
+                            // Change Current Station name
+                            var stationName = document.getElementById("currentStation");
+                            stationName.innerHTML = top5[3] + " Station";
+
                             // 1. Activities
                             var prev = document.getElementById("top5Act");
                             var parent = prev.parentElement;
@@ -707,7 +918,12 @@
                             newone.setAttribute("id", "top5Act");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[0].length; i++) {
+                            var dataLen = 5;
+                            if (data[0].length < 5) {
+                                dataLen = data[0].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Act" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
@@ -728,7 +944,12 @@
                             newone.setAttribute("id", "top5Place");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[1].length; i++) {
+                            var dataLen = 5;
+                            if (data[1].length < 5) {
+                                dataLen = data[1].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Place" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
@@ -749,7 +970,12 @@
                             newone.setAttribute("id", "top5Rest");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[2].length; i++) {
+                            var dataLen = 5;
+                            if (data[2].length < 5) {
+                                dataLen = data[2].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Rest" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
@@ -761,9 +987,55 @@
 
                             parent.appendChild(newone);
 
+                            // Reset containers
                             restOrigin = [];
                             actOrigin = [];
                             placeOrigin = [];
+
+                            // 4. Pie chart
+                            var countCategories = [];
+                            for (var i = 0; i < data.length; i++) {
+                                countCategories[i] = data[i].length;
+                            }
+                            var prev = document.getElementById("pieGraph");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("canvas");
+                            newone.setAttribute("id", "pieGraph");
+                            newone.setAttribute("style", "align-content: center; width: 220px; height: 388px; position: absolute; margin-left: 40px; margin-top: 52px;");
+                            parent.appendChild(newone);
+
+                            var ex01 = document.getElementById("pieGraph").getContext('2d');
+                            var chart01 = new Chart(ex01, {
+                                type: 'pie',
+                                data: {
+                                    labels: ['Activities', 'Places', 'Restaurants'],
+                                    datasets: [{
+                                        data: countCategories,
+                                        backgroundColor: [
+                                            'rgba(135, 204, 193, 0.5)',
+                                            'rgba(221, 142, 188, 0.5)',
+                                            'rgba(228, 216, 150, 0.5)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(135, 204, 193, 1)',
+                                            'rgba(221, 142, 188, 1)',
+                                            'rgba(228, 216, 150, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }
+                                    ]
+                                },
+                                options: {
+                                    responsive: false, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+                                    legend: {
+                                        labels: {
+                                            fontColor: 'rgb(255, 250, 250)'
+                                        }
+                                    }
+                                }
+                            });
                         },
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
@@ -800,6 +1072,11 @@
                             "station": station
                         },
                         success: function (data) {
+
+                            // Change Current Station name
+                            var stationName = document.getElementById("currentStation");
+                            stationName.innerHTML = top5[4] + " Station";
+
                             // 1. Activities
                             var prev = document.getElementById("top5Act");
                             var parent = prev.parentElement;
@@ -809,7 +1086,12 @@
                             newone.setAttribute("id", "top5Act");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[0].length; i++) {
+                            var dataLen = 5;
+                            if (data[0].length < 5) {
+                                dataLen = data[0].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Act" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[0][i][2] + "'");
@@ -830,7 +1112,12 @@
                             newone.setAttribute("id", "top5Place");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[1].length; i++) {
+                            var dataLen = 5;
+                            if (data[1].length < 5) {
+                                dataLen = data[1].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Place" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[1][i][2] + "'");
@@ -851,7 +1138,12 @@
                             newone.setAttribute("id", "top5Rest");
                             newone.setAttribute("style", "align-content: center; width: 400px; height: 440px");
 
-                            for (var i = 0; i < data[2].length; i++) {
+                            var dataLen = 5;
+                            if (data[2].length < 5) {
+                                dataLen = data[2].length;
+                            }
+
+                            for (var i = 0; i < dataLen; i++) {
                                 var listInput = document.createElement("button");
                                 listInput.setAttribute("id", "Rest" + i);
                                 listInput.setAttribute("onclick", "location.href= '" + data[2][i][2] + "'");
@@ -863,9 +1155,55 @@
 
                             parent.appendChild(newone);
 
+                            // Reset containers
                             restOrigin = [];
                             actOrigin = [];
                             placeOrigin = [];
+
+                            // 4. Pie chart
+                            var countCategories = [];
+                            for (var i = 0; i < data.length; i++) {
+                                countCategories[i] = data[i].length;
+                            }
+                            var prev = document.getElementById("pieGraph");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("canvas");
+                            newone.setAttribute("id", "pieGraph");
+                            newone.setAttribute("style", "align-content: center; width: 220px; height: 388px; position: absolute; margin-left: 40px; margin-top: 52px;");
+                            parent.appendChild(newone);
+
+                            var ex01 = document.getElementById("pieGraph").getContext('2d');
+                            var chart01 = new Chart(ex01, {
+                                type: 'pie',
+                                data: {
+                                    labels: ['Activities', 'Places', 'Restaurants'],
+                                    datasets: [{
+                                        data: countCategories,
+                                        backgroundColor: [
+                                            'rgba(135, 204, 193, 0.5)',
+                                            'rgba(221, 142, 188, 0.5)',
+                                            'rgba(228, 216, 150, 0.5)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(135, 204, 193, 1)',
+                                            'rgba(221, 142, 188, 1)',
+                                            'rgba(228, 216, 150, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }
+                                    ]
+                                },
+                                options: {
+                                    responsive: false, // default value. false일 경우 포함된 div의 크기에 맞춰서 그려짐.
+                                    legend: {
+                                        labels: {
+                                            fontColor: 'rgb(255, 250, 250)'
+                                        }
+                                    }
+                                }
+                            });
                         },
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
@@ -944,8 +1282,12 @@
         margin-top: 50px;
         position: absolute;
         ">
-            <p style="text-align: center;">Word cloud</p>
-            <canvas id="wordCloud" width="100%" style="align-content: center;">
+            <p style="text-align: center;" id="currentStation">Station Information</p>
+            <p style="width: 300px; text-align: center; position: absolute; margin-left: 0px;">Proportion for Station</p>
+            <p style="width: 300px; text-align: center; position: absolute; margin-left: 300px;">Word Cloud</p>
+            <canvas id="pieGraph" width="50%" style="align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;">
+            </canvas>
+            <canvas id="wordCloud" width="50%" style="align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 300px; margin-top: 52px;">
             </canvas>
         </div>
 

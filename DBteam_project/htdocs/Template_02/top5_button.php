@@ -17,12 +17,7 @@
         $resultAct = mysqli_query($conn, $sqlAct) or die(mysqli_error($conn));
         $i = 0;
         while ($row = mysqli_fetch_array($resultAct)) {
-            $i++;
             array_push($top5Act, $row);
-            if ($i == 5) {
-                $i = 0;
-                break;
-            }
         }
     }
     if ($ctgrPlace != '') {
@@ -30,12 +25,7 @@
         $resultPlace = mysqli_query($conn, $sqlPlace) or die(mysqli_error($conn));
         $i = 0;
         while ($row = mysqli_fetch_array($resultPlace)) {
-            $i++;
             array_push($top5Place, $row);
-            if ($i == 5) {
-                $i = 0;
-                break;
-            }
         }
     }
     if ($ctgrRest != '') {
@@ -43,12 +33,7 @@
         $resultRest = mysqli_query($conn, $sqlRest) or die(mysqli_error($conn));
         $i = 0;
         while ($row = mysqli_fetch_array($resultRest)) {
-            $i++;
             array_push($top5Rest, $row);
-            if ($i == 5) {
-                $i = 0;
-                break;
-            }
         }
     }
     $resultSum = [];
