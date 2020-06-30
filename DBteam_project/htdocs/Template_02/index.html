@@ -249,7 +249,7 @@
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script>
             $(function () {
-
+                // 막대 + 선 + Top5 역 리스트
                 $('#Result').on('click', function () {
                     actOrigin = ctgrAct.slice(0);
                     placeOrigin = ctgrPlace.slice(0);
@@ -267,6 +267,7 @@
                     placeOrigin = placeOrigin.join(', ');
                     restOrigin = restOrigin.join(', ');
 
+                    // 막대그래프 + Top5 역 리스트
                     $.ajax({
                         url: 'http://222.106.121.250/Template_02/showResult.php',
                         type: 'POST',
@@ -359,7 +360,7 @@
                                 listInput.setAttribute("id", "top" + i);
                                 listInput.setAttribute("type", "button");
                                 listInput.setAttribute("value", '   Top ' + (i + 1) + ': ' + top5[i]);
-                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 40px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
+                                listInput.setAttribute("style", "font-family: 'Hanna'; font-size: 17px; color: snow; width: 250px; height: 50px; margin-left: 10px; margin-top: 30px; background-color: rgb(52, 52, 65); text-align: left; border: 0; outline: 0;");
                                 listInput.innerHTML = listInput.value;
                                 newone.appendChild(listInput);
                             }
@@ -424,7 +425,7 @@
                                             'rgba(255, 250, 250, 0.05)'
                                         ],
                                         borderColor: [
-                                            
+
                                             'rgba(221, 142, 188, 1)'
                                         ],
                                         borderWidth: 1.5
@@ -478,7 +479,7 @@
                         }
 
                     })
-                    
+
                 });
                 // 역, 카테고리별 Top 5: 총 15개
                 $(document).on('click', "#top0", function () {
@@ -611,6 +612,8 @@
                             var newone = document.createElement("canvas");
                             newone.setAttribute("id", "pieGraph");
                             newone.setAttribute("style", "align-content: center; width: 220px; height: 388px; position: absolute; margin-left: 40px; margin-top: 52px;");
+                            newone.setAttribute("width", "220");
+                            newone.setAttribute("height", "388");
                             parent.appendChild(newone);
 
                             var ex01 = document.getElementById("pieGraph").getContext('2d');
@@ -643,6 +646,22 @@
                                     }
                                 }
                             });
+
+                            // 5. Word Cloud
+                            //align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;
+                            var prev = document.getElementById("wordCloud");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("img");
+                            newone.setAttribute("id", "wordCloud");
+                            newone.setAttribute("src", "image/wordCloud/" + top5[0] + ".png");
+                            newone.setAttribute("width", "400");
+                            newone.setAttribute("height", "388");
+                            newone.setAttribute("style", "align-content: center; width: 380px; height: 348px; position: absolute; margin-left: 310px; margin-top: 82px;");
+                            parent.appendChild(newone);
+
+
 
                         },
                         error: function (request, status, error) {
@@ -815,6 +834,21 @@
                         },
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+
+
+                            // 5. Word Cloud
+                            //align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;
+                            var prev = document.getElementById("wordCloud");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("img");
+                            newone.setAttribute("id", "wordCloud");
+                            newone.setAttribute("src", "image/wordCloud/" + top5[1] + ".png");
+                            newone.setAttribute("width", "400");
+                            newone.setAttribute("height", "388");
+                            newone.setAttribute("style", "align-content: center; width: 380px; height: 348px; position: absolute; margin-left: 310px; margin-top: 82px;");
+                            parent.appendChild(newone);
                         }
                     })
                 });
@@ -983,6 +1017,21 @@
                         },
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+
+
+                            // 5. Word Cloud
+                            //align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;
+                            var prev = document.getElementById("wordCloud");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("img");
+                            newone.setAttribute("id", "wordCloud");
+                            newone.setAttribute("src", "image/wordCloud/" + top5[2] + ".png");
+                            newone.setAttribute("width", "400");
+                            newone.setAttribute("height", "388");
+                            newone.setAttribute("style", "align-content: center; width: 380px; height: 348px; position: absolute; margin-left: 310px; margin-top: 82px;");
+                            parent.appendChild(newone);
                         }
                     })
                 });
@@ -1151,6 +1200,21 @@
                         },
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+
+
+                            // 5. Word Cloud
+                            //align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;
+                            var prev = document.getElementById("wordCloud");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("img");
+                            newone.setAttribute("id", "wordCloud");
+                            newone.setAttribute("src", "image/wordCloud/" + top5[3] + ".png");
+                            newone.setAttribute("width", "400");
+                            newone.setAttribute("height", "388");
+                            newone.setAttribute("style", "align-content: center; width: 380px; height: 348px; position: absolute; margin-left: 310px; margin-top: 82px;");
+                            parent.appendChild(newone);
                         }
                     })
                 });
@@ -1319,6 +1383,21 @@
                         },
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+
+
+                            // 5. Word Cloud
+                            //align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;
+                            var prev = document.getElementById("wordCloud");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+
+                            var newone = document.createElement("img");
+                            newone.setAttribute("id", "wordCloud");
+                            newone.setAttribute("src", "image/wordCloud/" + top5[4] + ".png");
+                            newone.setAttribute("width", "400");
+                            newone.setAttribute("height", "388");
+                            newone.setAttribute("style", "align-content: center; width: 380px; height: 348px; position: absolute; margin-left: 310px; margin-top: 82px;");
+                            parent.appendChild(newone);
                         }
                     })
                 });
@@ -1374,7 +1453,7 @@
     margin-right: 20px;
     ">
         <div style="
-        width: 400px;
+        width: 300px;
         height: 500px;
         border: 2px solid;
         border-color: rgb(172, 172, 172);
@@ -1388,23 +1467,23 @@
         </div>
 
         <div style="
-        width: 600px;
+        width: 700px;
         height: 500px;
         border: 2px solid;
         border-color: rgb(172, 172, 172);
-        margin-left: 548px;
+        margin-left: 448px;
         margin-top: 50px;
         position: absolute;
         ">
             <p style="text-align: center;" id="currentStation">Station Information</p>
             <p style="width: 300px; text-align: center; position: absolute; margin-left: 0px;">Proportion for Station
             </p>
-            <p style="width: 300px; text-align: center; position: absolute; margin-left: 300px;">Word Cloud</p>
+            <p style="width: 400px; text-align: center; position: absolute; margin-left: 300px;">Word Cloud</p>
             <canvas id="pieGraph" width="50%"
                 style="align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;">
             </canvas>
             <canvas id="wordCloud" width="50%"
-                style="align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 300px; margin-top: 52px;">
+                style="align-content: center; width: 400px; height: 388px; position: absolute; margin-left: 300px; margin-top: 52px;">
             </canvas>
         </div>
 
