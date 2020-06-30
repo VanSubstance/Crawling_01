@@ -156,7 +156,7 @@
     font-weight: 300;
     margin-left: 10px;
     ">TEAM 04</p>
-        <!-- 카테고리 체크박스 -->
+        <!-- 카테고리 체크박스  159 ~ 233 -->
         <ul style="
     width: 100%;
     padding-left: 0px;
@@ -231,7 +231,7 @@
             </li>
             <br />
         </ul>
-        <!-- 결과 버튼 -->
+        <!-- 결과 버튼 + ajax 기능들 234 ~ 1405 -->
         <input type="button" id="Result" value="R   E   S   U   L   T" style="
     float: right;
     margin-right: 20px;
@@ -613,7 +613,7 @@
                             newone.setAttribute("id", "pieGraph");
                             newone.setAttribute("style", "align-content: center; width: 220px; height: 388px; position: absolute; margin-left: 40px; margin-top: 52px;");
                             newone.setAttribute("width", "220");
-                            newone.setAttribute("height", "388");
+                            newone.setAttribute("height", "388");                            
                             parent.appendChild(newone);
 
                             var ex01 = document.getElementById("pieGraph").getContext('2d');
@@ -648,14 +648,13 @@
                             });
 
                             // 5. Word Cloud
-                            //align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;
                             var prev = document.getElementById("wordCloud");
                             var parent = prev.parentElement;
                             parent.removeChild(prev);
 
                             var newone = document.createElement("img");
                             newone.setAttribute("id", "wordCloud");
-                            newone.setAttribute("src", "image/wordCloud/" + top5[0] + ".png");
+                            newone.setAttribute("src", "image/wordCloud/" + top5[0] + " Station.png");
                             newone.setAttribute("width", "400");
                             newone.setAttribute("height", "388");
                             newone.setAttribute("style", "align-content: center; width: 380px; height: 348px; position: absolute; margin-left: 310px; margin-top: 82px;");
@@ -799,7 +798,8 @@
                             var newone = document.createElement("canvas");
                             newone.setAttribute("id", "pieGraph");
                             newone.setAttribute("style", "align-content: center; width: 220px; height: 388px; position: absolute; margin-left: 40px; margin-top: 52px;");
-                            parent.appendChild(newone);
+                            newone.setAttribute("width", "220");
+                            newone.setAttribute("height", "388");                            parent.appendChild(newone);
 
                             var ex01 = document.getElementById("pieGraph").getContext('2d');
                             var chart01 = new Chart(ex01, {
@@ -831,24 +831,23 @@
                                     }
                                 }
                             });
-                        },
-                        error: function (request, status, error) {
-                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
-
 
                             // 5. Word Cloud
-                            //align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;
                             var prev = document.getElementById("wordCloud");
                             var parent = prev.parentElement;
                             parent.removeChild(prev);
 
                             var newone = document.createElement("img");
                             newone.setAttribute("id", "wordCloud");
-                            newone.setAttribute("src", "image/wordCloud/" + top5[1] + ".png");
+                            newone.setAttribute("src", "image/wordCloud/" + top5[1] + " Station.png");
                             newone.setAttribute("width", "400");
                             newone.setAttribute("height", "388");
                             newone.setAttribute("style", "align-content: center; width: 380px; height: 348px; position: absolute; margin-left: 310px; margin-top: 82px;");
                             parent.appendChild(newone);
+                        },
+                        error: function (request, status, error) {
+                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+
                         }
                     })
                 });
@@ -982,7 +981,8 @@
                             var newone = document.createElement("canvas");
                             newone.setAttribute("id", "pieGraph");
                             newone.setAttribute("style", "align-content: center; width: 220px; height: 388px; position: absolute; margin-left: 40px; margin-top: 52px;");
-                            parent.appendChild(newone);
+                            newone.setAttribute("width", "220");
+                            newone.setAttribute("height", "388");                            parent.appendChild(newone);
 
                             var ex01 = document.getElementById("pieGraph").getContext('2d');
                             var chart01 = new Chart(ex01, {
@@ -1014,24 +1014,22 @@
                                     }
                                 }
                             });
-                        },
-                        error: function (request, status, error) {
-                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
-
-
                             // 5. Word Cloud
-                            //align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;
                             var prev = document.getElementById("wordCloud");
                             var parent = prev.parentElement;
                             parent.removeChild(prev);
 
                             var newone = document.createElement("img");
                             newone.setAttribute("id", "wordCloud");
-                            newone.setAttribute("src", "image/wordCloud/" + top5[2] + ".png");
+                            newone.setAttribute("src", "image/wordCloud/" + top5[2] + " Station.png");
                             newone.setAttribute("width", "400");
                             newone.setAttribute("height", "388");
                             newone.setAttribute("style", "align-content: center; width: 380px; height: 348px; position: absolute; margin-left: 310px; margin-top: 82px;");
                             parent.appendChild(newone);
+                        },
+                        error: function (request, status, error) {
+                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+                            
                         }
                     })
                 });
@@ -1165,7 +1163,8 @@
                             var newone = document.createElement("canvas");
                             newone.setAttribute("id", "pieGraph");
                             newone.setAttribute("style", "align-content: center; width: 220px; height: 388px; position: absolute; margin-left: 40px; margin-top: 52px;");
-                            parent.appendChild(newone);
+                            newone.setAttribute("width", "220");
+                            newone.setAttribute("height", "388");                            parent.appendChild(newone);
 
                             var ex01 = document.getElementById("pieGraph").getContext('2d');
                             var chart01 = new Chart(ex01, {
@@ -1197,24 +1196,23 @@
                                     }
                                 }
                             });
-                        },
-                        error: function (request, status, error) {
-                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
-
 
                             // 5. Word Cloud
-                            //align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;
                             var prev = document.getElementById("wordCloud");
                             var parent = prev.parentElement;
                             parent.removeChild(prev);
 
                             var newone = document.createElement("img");
                             newone.setAttribute("id", "wordCloud");
-                            newone.setAttribute("src", "image/wordCloud/" + top5[3] + ".png");
+                            newone.setAttribute("src", "image/wordCloud/" + top5[3] + " Station.png");
                             newone.setAttribute("width", "400");
                             newone.setAttribute("height", "388");
                             newone.setAttribute("style", "align-content: center; width: 380px; height: 348px; position: absolute; margin-left: 310px; margin-top: 82px;");
                             parent.appendChild(newone);
+                        },
+                        error: function (request, status, error) {
+                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+
                         }
                     })
                 });
@@ -1348,7 +1346,8 @@
                             var newone = document.createElement("canvas");
                             newone.setAttribute("id", "pieGraph");
                             newone.setAttribute("style", "align-content: center; width: 220px; height: 388px; position: absolute; margin-left: 40px; margin-top: 52px;");
-                            parent.appendChild(newone);
+                            newone.setAttribute("width", "220");
+                            newone.setAttribute("height", "388");                            parent.appendChild(newone);
 
                             var ex01 = document.getElementById("pieGraph").getContext('2d');
                             var chart01 = new Chart(ex01, {
@@ -1380,24 +1379,22 @@
                                     }
                                 }
                             });
-                        },
-                        error: function (request, status, error) {
-                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
-
 
                             // 5. Word Cloud
-                            //align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;
                             var prev = document.getElementById("wordCloud");
                             var parent = prev.parentElement;
                             parent.removeChild(prev);
 
                             var newone = document.createElement("img");
                             newone.setAttribute("id", "wordCloud");
-                            newone.setAttribute("src", "image/wordCloud/" + top5[4] + ".png");
+                            newone.setAttribute("src", "image/wordCloud/" + top5[4] + " Station.png");
                             newone.setAttribute("width", "400");
                             newone.setAttribute("height", "388");
                             newone.setAttribute("style", "align-content: center; width: 380px; height: 348px; position: absolute; margin-left: 310px; margin-top: 82px;");
                             parent.appendChild(newone);
+                        },
+                        error: function (request, status, error) {
+                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
                         }
                     })
                 });
