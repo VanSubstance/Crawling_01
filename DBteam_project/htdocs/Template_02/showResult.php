@@ -1,4 +1,6 @@
 <?php
+// RESULT 버튼 눌렀을 때의 반환값: 
+// Array: [ 상위 5개역과 평균치에 대한 { 역 이름 : 가게 개수 } ]
     header("Content-Type:application/json");
     $ctgrAct = $_POST["ctgrAct"];
     $ctgrPlace = $_POST["ctgrPlace"];

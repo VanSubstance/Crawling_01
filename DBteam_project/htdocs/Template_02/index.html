@@ -27,13 +27,13 @@
             font-family: 'Hanna';
             color: snow;
         }
-
     </style>
     <?php
         include("database.php");
     ?>
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <!--- 기본적인 변수들 선언과 체크박스 기능 --->
     <script>
         var actOrigin = [];
         var placeOrigin = [];
@@ -41,6 +41,11 @@
         var ctgrRest = [];
         var ctgrAct = [];
         var ctgrPlace = [];
+        var top5 = [];
+        var top5Origin = [];
+
+        // Attach: parameter > 각 카테고리의 하위 체크박스
+        // Function: 체크 / 체크해제 하면 각 카테고리를 위한 array에 값이 추가 / 삭제 된다.
         function attach(val) {
             if (val.checked == true) {
                 if (val.name == "ctgrRest[]") {
@@ -77,6 +82,7 @@
             console.log(ctgrAct);
             console.log(ctgrPlace);
         }
+
         //checkUnder: parameter > name 이 ctgr 인 체크박스
         //Function: name이 ctgr인 체크박스를 체크 / 체크해제하면 하위 체크박스들도 체크 / 체크 해제된다.
         function checkUnder(val) {
@@ -133,48 +139,44 @@
         }
 
     </script>
-    <script>
-        // Top 5 역 보관할 어레이
-        var top5 = [];
-    </script>
 </head>
 
 <body id="body" style="background-color: black;">
+    <!-- 좌측 카테고리 선택 부분 -->
     <div style="
-    background-color: rgb(46, 46, 59);
+    background-color: rgb(52, 46, 59);
     border-right: 1px solid;
     border-right-color: rgb(172, 172, 172);
     width: 400px;
     height: 1200px;
     float: left;
     ">
-        <p  onclick="location.href='//222.106.121.250/Template_02/index.html'" style="
+        <p onclick="location.href='//222.106.121.250/Template_02/index.html'" style="
     font-size: 30px;
     font-weight: 300;
     margin-left: 10px;
     ">TEAM 04</p>
-        <form>
-            <ul style="
+        <!-- 카테고리 체크박스 -->
+        <ul style="
     width: 100%;
     padding-left: 0px;
     ">
-                <p style="
+            <p style="
         font-size: 20px;
         text-align: center;
         ">
-                    CATEGORY
-                </p>
-                <li style="
+                CATEGORY
+            </p>
+            <li style="
         height: 200px;
         ">
-                    <div style="height: 50px;">
-                        <input type="checkbox" name="ctgr[]" id="restaurantCheck" size=10 value="restaurant"
-                            onclick="checkUnder(this)">
-                        <label style="height: 50px;" for="restaurantCheck"
-                            style="margin-left: 25px;">Restaurants</label>
-                    </div>
-                    <ul>
-                        <?php
+                <div style="height: 50px;">
+                    <input type="checkbox" name="ctgr[]" id="restaurantCheck" size=10 value="restaurant"
+                        onclick="checkUnder(this)">
+                    <label style="height: 50px;" for="restaurantCheck" style="margin-left: 25px;">Restaurants</label>
+                </div>
+                <ul>
+                    <?php
             foreach ($ctgrRest as $ctgrName) {
                 echo '<li style= "width: 180px; height: 30px; float: left;">';
                 echo '<input type= "checkbox" name= "ctgrRest[]" id= "'.$ctgrName;
@@ -183,19 +185,19 @@
                 echo '</li>';
             }
             ?>
-                    </ul>
-                </li>
-                <br />
-                <li style="
+                </ul>
+            </li>
+            <br />
+            <li style="
         height: 200px;
         ">
-                    <div style="height: 50px;">
-                        <input type="checkbox" name="ctgr[]" id="activityCheck" size=10 value="activity"
-                            onclick="checkUnder(this)">
-                        <label style="height: 50px;" for="activityCheck" style="margin-left: 25px;">Activities</label>
-                    </div>
-                    <ul>
-                        <?php
+                <div style="height: 50px;">
+                    <input type="checkbox" name="ctgr[]" id="activityCheck" size=10 value="activity"
+                        onclick="checkUnder(this)">
+                    <label style="height: 50px;" for="activityCheck" style="margin-left: 25px;">Activities</label>
+                </div>
+                <ul>
+                    <?php
             foreach ($ctgrAct as $ctgrName) {
                 echo '<li style= "width: 180px; height: 30px; float: left;">';
                 echo '<input type= "checkbox" name= "ctgrAct[]" id= "'.$ctgrName;
@@ -204,19 +206,19 @@
                 echo '</li>';
             }
             ?>
-                    </ul>
-                </li>
-                <br />
-                <li style="
+                </ul>
+            </li>
+            <br />
+            <li style="
         height: 200px;
         ">
-                    <div style="height: 50px;">
-                        <input type="checkbox" name="ctgr[]" id="placeCheck" size=10 value="place"
-                            onclick="checkUnder(this)">
-                        <label style="height: 50px;" for="placeCheck" style="margin-left: 25px;">Places</label>
-                    </div>
-                    <ul>
-                        <?php
+                <div style="height: 50px;">
+                    <input type="checkbox" name="ctgr[]" id="placeCheck" size=10 value="place"
+                        onclick="checkUnder(this)">
+                    <label style="height: 50px;" for="placeCheck" style="margin-left: 25px;">Places</label>
+                </div>
+                <ul>
+                    <?php
             foreach ($ctgrPlace as $ctgrName) {
                 echo '<li style= "width: 180px; height: 30px; float: left;">';
                 echo '<input type= "checkbox" name= "ctgrPlace[]" id= "'.$ctgrName;
@@ -225,27 +227,30 @@
                 echo '</li>';
             }
             ?>
-                    </ul>
-                </li>
-                <br />
-            </ul>
-        </form>
-        <input type="button" id="Result" value="R E S U L T" style="
+                </ul>
+            </li>
+            <br />
+        </ul>
+        <!-- 결과 버튼 -->
+        <input type="button" id="Result" value="R   E   S   U   L   T" style="
     float: right;
     margin-right: 20px;
-    margin-top: 70px;
-    width: 120px;
-    height: 40px;
+    margin-top: 80px;
+    width: 180px;
+    height: 60px;
     background-color: rgb(15, 52, 88);
     font-family: 'Hanna';
+    font-size: 20px;
     color: snow;
     border: 2px solid snow;
     ">
+
+        <!-- AJAX: 결과 버튼을 눌렀을 때 기능 -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script>
             $(function () {
 
-                $('#Result').on('click', function (event) {
+                $('#Result').on('click', function () {
                     actOrigin = ctgrAct.slice(0);
                     placeOrigin = ctgrPlace.slice(0);
                     restOrigin = ctgrRest.slice(0);
@@ -294,7 +299,7 @@
                                             'rgba(255, 250, 250, 0.5)',
                                             'rgba(255, 250, 250, 0.5)',
                                             'rgba(255, 250, 250, 0.5)',
-                                            'rgba(255, 250, 250, 0.5)', 
+                                            'rgba(255, 250, 250, 0.5)',
                                             'rgba(255, 99, 132, 0.5)'
                                         ],
                                         borderColor: [
@@ -302,7 +307,7 @@
                                             'rgba(255, 250, 250, 1)',
                                             'rgba(255, 250, 250, 1)',
                                             'rgba(255, 250, 250, 1)',
-                                            'rgba(255, 250, 250, 1)', 
+                                            'rgba(255, 250, 250, 1)',
                                             'rgba(255, 99, 132, 1)'
                                         ],
                                         borderWidth: 1
@@ -333,7 +338,10 @@
                             });
 
                             top5 = [];
+                            top5Origin = [];
                             top5 = Object.keys(data).slice(0, 5);
+                            top5Origin = top5.slice(0);
+                            top5Origin = top5Origin.join(', ');
 
                             // Top5 역
                             var prev = document.getElementById("contextList");
@@ -365,8 +373,112 @@
                         error: function (request, status, error) {
                             alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
                         }
+                    })
+
+                    // 선 그래프
+                    $.ajax({
+                        url: 'http://222.106.121.250/Template_02/showResult_02.php',
+                        type: 'POST',
+                        traditional: true,
+                        dataType: 'json',
+                        data: {
+                            "station": top5Origin
+                        },
+                        success: function (data) {
+                            var prev = document.getElementById("lineGraph");
+                            var parent = prev.parentElement;
+                            parent.removeChild(prev);
+                            var newone = document.createElement("canvas");
+                            newone.setAttribute("id", "lineGraph");
+                            newone.setAttribute("style", "align-content: center; width: 500px; height: 440px");
+                            parent.appendChild(newone);
+                            var ex01 = document.getElementById("lineGraph").getContext('2d');
+                            var chart01 = new Chart(ex01, {
+                                type: 'line',
+                                data: {
+                                    labels: [-5, -4, -3, -2, -1, 0],
+                                    datasets: [{
+                                        label: top5[0],
+                                        data: Object.values(data)[0],
+                                        backgroundColor: [
+                                            'rgba(255, 250, 250, 0.05)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(255, 199, 132, 1)'
+                                        ],
+                                        borderWidth: 1.5
+                                    }, {
+                                        label: top5[1],
+                                        data: Object.values(data)[1],
+                                        backgroundColor: [
+                                            'rgba(255, 250, 250, 0.05)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(135, 204, 193, 1)'
+                                        ],
+                                        borderWidth: 1.5
+                                    }, {
+                                        label: top5[2],
+                                        data: Object.values(data)[2],
+                                        backgroundColor: [
+                                            'rgba(255, 250, 250, 0.05)'
+                                        ],
+                                        borderColor: [
+                                            
+                                            'rgba(221, 142, 188, 1)'
+                                        ],
+                                        borderWidth: 1.5
+                                    }, {
+                                        label: top5[3],
+                                        data: Object.values(data)[3],
+                                        backgroundColor: [
+                                            'rgba(255, 250, 250, 0.05)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(228, 216, 150, 1)'
+                                        ],
+                                        borderWidth: 1.5
+                                    }, {
+                                        label: top5[4],
+                                        data: Object.values(data)[4],
+                                        backgroundColor: [
+                                            'rgba(255, 250, 250, 0.05)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(186, 149, 228, 1)'
+                                        ],
+                                        borderWidth: 1.5
+                                    }
+                                    ]
+                                },
+                                options: {
+                                    scales: {
+                                        xAxes: [{
+                                            ticks: {
+                                                fontColor: 'rgb(255, 250, 250)'
+                                            }
+                                        }],
+                                        yAxes: [{
+                                            ticks: {
+                                                fontColor: 'rgb(255, 250, 250)',
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    },
+                                    legend: {
+                                        labels: {
+                                            fontColor: 'rgb(255, 250, 250)'
+                                        }
+                                    }
+                                }
+                            });
+                        },
+                        error: function (request, status, error) {
+                            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+                        }
 
                     })
+                    
                 });
                 // 역, 카테고리별 Top 5: 총 15개
                 $(document).on('click', "#top0", function () {
@@ -1214,6 +1326,7 @@
         </script>
     </div>
 
+    <!-- 우측 상위 5개역 요약 부분: 막대로 5개 뽑고 그 5개역에 대한 언급량 선 그래프 -->
     <div style="
     background-color: rgb(46, 46, 59);
     width: 600px;
@@ -1229,7 +1342,7 @@
         margin-top: 50px;
         position: absolute;
         ">
-            <p style="text-align: center;">Station ~ Number of stores</p>
+            <p style="text-align: center;">Bar chart: Station ~ Number of stores</p>
             <canvas id="barGraph" width="100%" style="align-content: center;">
                 막대 그래프
             </canvas>
@@ -1244,20 +1357,21 @@
         margin-top: 646px;
         position: absolute;
         ">
-            <p style="text-align: center;">역별 언급량 그래프 예시</p>
-            <canvas id="graph_02" width="100%" height="480px" style="align-content: center;">
+            <p style="text-align: center;">Line chart: Weeks before now ~ Rate of mentions</p>
+            <canvas id="lineGraph" width="100%" style="align-content: center;">
                 선 그래프
             </canvas>
         </div>
 
     </div>
 
+    <!-- 중간 부분: 막대로 뽑은 5개 표시 -> 선택시 해당 역 top5 리스트 출력 + 카테고리 비율 원형 차트 + 해당 역 키워드 클라우드 -->
     <div style="
     background-color: rgb(52, 52, 65);
     width: 1200px;
     height: 1200px;
     float: right;
-    margin-right: 100px;
+    margin-right: 20px;
     ">
         <div style="
         width: 400px;
@@ -1283,11 +1397,14 @@
         position: absolute;
         ">
             <p style="text-align: center;" id="currentStation">Station Information</p>
-            <p style="width: 300px; text-align: center; position: absolute; margin-left: 0px;">Proportion for Station</p>
+            <p style="width: 300px; text-align: center; position: absolute; margin-left: 0px;">Proportion for Station
+            </p>
             <p style="width: 300px; text-align: center; position: absolute; margin-left: 300px;">Word Cloud</p>
-            <canvas id="pieGraph" width="50%" style="align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;">
+            <canvas id="pieGraph" width="50%"
+                style="align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 0px; margin-top: 52px;">
             </canvas>
-            <canvas id="wordCloud" width="50%" style="align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 300px; margin-top: 52px;">
+            <canvas id="wordCloud" width="50%"
+                style="align-content: center; width: 300px; height: 388px; position: absolute; margin-left: 300px; margin-top: 52px;">
             </canvas>
         </div>
 

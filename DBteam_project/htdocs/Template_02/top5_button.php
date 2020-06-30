@@ -1,4 +1,6 @@
 <?php
+// 역 이름 눌렀을때 반환값: 
+// Array: [ 세가지 카테고리에 대한 { 카테고리 : [ 각 역에 대한 { 가게 이름 : 리뷰 개수 } ] ] } ]
     header("Content-Type:application/json");
     $station = $_POST["station"];
     $ctgrAct = $_POST["ctgrAct"];
@@ -15,7 +17,6 @@
     if ($ctgrAct != '') {
         $sqlAct = 'SELECT ACTIVITY_NAME, REV_NUM, URL FROM ACTIVITIES WHERE CTGRGROUP IN ('.$ctgrAct.') AND STATION_NAME = '.$station.' ORDER BY REV_NUM;';
         $resultAct = mysqli_query($conn, $sqlAct) or die(mysqli_error($conn));
-        $i = 0;
         while ($row = mysqli_fetch_array($resultAct)) {
             array_push($top5Act, $row);
         }
@@ -23,7 +24,6 @@
     if ($ctgrPlace != '') {
         $sqlPlace = 'SELECT PLACE_NAME, REV_NUM, URL FROM PLACES WHERE CTGRGROUP IN ('.$ctgrPlace.') AND STATION_NAME = '.$station.' ORDER BY REV_NUM;';
         $resultPlace = mysqli_query($conn, $sqlPlace) or die(mysqli_error($conn));
-        $i = 0;
         while ($row = mysqli_fetch_array($resultPlace)) {
             array_push($top5Place, $row);
         }
@@ -31,7 +31,6 @@
     if ($ctgrRest != '') {
         $sqlRest = 'SELECT RESTAURANT_NAME, REV_NUM, URL FROM RESTAURANTS WHERE CTGRGROUP IN ('.$ctgrRest.') AND STATION_NAME = '.$station.' ORDER BY REV_NUM;';
         $resultRest = mysqli_query($conn, $sqlRest) or die(mysqli_error($conn));
-        $i = 0;
         while ($row = mysqli_fetch_array($resultRest)) {
             array_push($top5Rest, $row);
         }

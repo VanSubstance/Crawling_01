@@ -1,4 +1,5 @@
 <?php
+// 데이터베이스에 연결하기 위한 php
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
     $conn = mysqli_connect('localhost', 'root', '123456', 'teamdb');
